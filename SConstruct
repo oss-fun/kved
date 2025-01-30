@@ -22,7 +22,8 @@ compiler_prefix = GetOption('compiler_prefix')
 target = GetOption('target')
 
 env_options = {
-    "CC"    : compiler_prefix + "gcc",
+    # "CC"    : compiler_prefix + "gcc",
+    "CC"    : "/opt/wasi-sdk/bin/clang",
     "CXX"   : compiler_prefix + "g++",
     "LD"    : compiler_prefix + "g++",
     "AR"    : compiler_prefix + "ar",
