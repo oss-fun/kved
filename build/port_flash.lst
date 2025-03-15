@@ -1,0 +1,351 @@
+GAS LISTING /tmp/ccukkZRg.s 			page 1
+
+
+   1              		.file	"port_flash.c"
+   2              		.text
+   3              	.Ltext0:
+   4              		.file 0 "/home/funera1/repo/kved" "./port/simul/port_flash.c"
+   5              		.section	.text.kved_flash_sector_erase,"ax",@progbits
+   6              		.globl	kved_flash_sector_erase
+   8              	kved_flash_sector_erase:
+   9              	.LVL0:
+  10              	.LFB12:
+  11              		.file 1 "./port/simul/port_flash.c"
+   1:./port/simul/port_flash.c **** /*
+   2:./port/simul/port_flash.c **** kved (key/value embedded database), a simple key/value database 
+   3:./port/simul/port_flash.c **** implementation for microcontrollers.
+   4:./port/simul/port_flash.c **** 
+   5:./port/simul/port_flash.c **** Copyright (c) 2022 Marcelo Barros de Almeida <marcelobarrosalmeida@gmail.com>
+   6:./port/simul/port_flash.c **** */
+   7:./port/simul/port_flash.c **** 
+   8:./port/simul/port_flash.c **** #include <stdint.h>
+   9:./port/simul/port_flash.c **** #include <stdbool.h>
+  10:./port/simul/port_flash.c **** #include <string.h>
+  11:./port/simul/port_flash.c **** 
+  12:./port/simul/port_flash.c **** #include "kved.h"
+  13:./port/simul/port_flash.c **** #include "kved_flash.h"
+  14:./port/simul/port_flash.c **** 
+  15:./port/simul/port_flash.c **** #define FLASH_NUM_ENTRIES (16)
+  16:./port/simul/port_flash.c **** #define FLASH_SECTOR_SIZE (FLASH_NUM_ENTRIES*KVED_FLASH_WORD_SIZE)
+  17:./port/simul/port_flash.c **** 
+  18:./port/simul/port_flash.c **** kved_word_t data_bank0[FLASH_NUM_ENTRIES];
+  19:./port/simul/port_flash.c **** kved_word_t data_bank1[FLASH_NUM_ENTRIES];
+  20:./port/simul/port_flash.c **** kved_word_t *sector_address[KVED_FLASH_NUM_SECTORS] = { data_bank0, data_bank1 };
+  21:./port/simul/port_flash.c **** 
+  22:./port/simul/port_flash.c **** 
+  23:./port/simul/port_flash.c **** bool kved_flash_sector_erase(kved_flash_sector_t sec)
+  24:./port/simul/port_flash.c **** {
+  12              		.loc 1 24 1 view -0
+  13              		.cfi_startproc
+  14              		.loc 1 24 1 is_stmt 0 view .LVU1
+  15 0000 F30F1EFA 		endbr64
+  25:./port/simul/port_flash.c **** 	memset(sector_address[sec],0xFF,FLASH_SECTOR_SIZE);
+  16              		.loc 1 25 2 is_stmt 1 view .LVU2
+  17              		.loc 1 25 23 is_stmt 0 view .LVU3
+  18 0004 89FF     		movl	%edi, %edi
+  19              		.loc 1 25 23 view .LVU4
+  20 0006 488D0500 		leaq	sector_address(%rip), %rax
+  20      000000
+  21 000d 488B04F8 		movq	(%rax,%rdi,8), %rax
+  22              	.LVL1:
+  23              	.LBB4:
+  24              	.LBI4:
+  25              		.file 2 "/usr/include/x86_64-linux-gnu/bits/string_fortified.h"
+   1:/usr/include/x86_64-linux-gnu/bits/string_fortified.h **** /* Copyright (C) 2004-2022 Free Software Foundation, Inc.
+   2:/usr/include/x86_64-linux-gnu/bits/string_fortified.h ****    This file is part of the GNU C Library.
+   3:/usr/include/x86_64-linux-gnu/bits/string_fortified.h **** 
+   4:/usr/include/x86_64-linux-gnu/bits/string_fortified.h ****    The GNU C Library is free software; you can redistribute it and/or
+   5:/usr/include/x86_64-linux-gnu/bits/string_fortified.h ****    modify it under the terms of the GNU Lesser General Public
+   6:/usr/include/x86_64-linux-gnu/bits/string_fortified.h ****    License as published by the Free Software Foundation; either
+   7:/usr/include/x86_64-linux-gnu/bits/string_fortified.h ****    version 2.1 of the License, or (at your option) any later version.
+GAS LISTING /tmp/ccukkZRg.s 			page 2
+
+
+   8:/usr/include/x86_64-linux-gnu/bits/string_fortified.h **** 
+   9:/usr/include/x86_64-linux-gnu/bits/string_fortified.h ****    The GNU C Library is distributed in the hope that it will be useful,
+  10:/usr/include/x86_64-linux-gnu/bits/string_fortified.h ****    but WITHOUT ANY WARRANTY; without even the implied warranty of
+  11:/usr/include/x86_64-linux-gnu/bits/string_fortified.h ****    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+  12:/usr/include/x86_64-linux-gnu/bits/string_fortified.h ****    Lesser General Public License for more details.
+  13:/usr/include/x86_64-linux-gnu/bits/string_fortified.h **** 
+  14:/usr/include/x86_64-linux-gnu/bits/string_fortified.h ****    You should have received a copy of the GNU Lesser General Public
+  15:/usr/include/x86_64-linux-gnu/bits/string_fortified.h ****    License along with the GNU C Library; if not, see
+  16:/usr/include/x86_64-linux-gnu/bits/string_fortified.h ****    <https://www.gnu.org/licenses/>.  */
+  17:/usr/include/x86_64-linux-gnu/bits/string_fortified.h **** 
+  18:/usr/include/x86_64-linux-gnu/bits/string_fortified.h **** #ifndef _BITS_STRING_FORTIFIED_H
+  19:/usr/include/x86_64-linux-gnu/bits/string_fortified.h **** #define _BITS_STRING_FORTIFIED_H 1
+  20:/usr/include/x86_64-linux-gnu/bits/string_fortified.h **** 
+  21:/usr/include/x86_64-linux-gnu/bits/string_fortified.h **** #ifndef _STRING_H
+  22:/usr/include/x86_64-linux-gnu/bits/string_fortified.h **** # error "Never use <bits/string_fortified.h> directly; include <string.h> instead."
+  23:/usr/include/x86_64-linux-gnu/bits/string_fortified.h **** #endif
+  24:/usr/include/x86_64-linux-gnu/bits/string_fortified.h **** 
+  25:/usr/include/x86_64-linux-gnu/bits/string_fortified.h **** __fortify_function void *
+  26:/usr/include/x86_64-linux-gnu/bits/string_fortified.h **** __NTH (memcpy (void *__restrict __dest, const void *__restrict __src,
+  27:/usr/include/x86_64-linux-gnu/bits/string_fortified.h **** 	       size_t __len))
+  28:/usr/include/x86_64-linux-gnu/bits/string_fortified.h **** {
+  29:/usr/include/x86_64-linux-gnu/bits/string_fortified.h ****   return __builtin___memcpy_chk (__dest, __src, __len,
+  30:/usr/include/x86_64-linux-gnu/bits/string_fortified.h **** 				 __glibc_objsize0 (__dest));
+  31:/usr/include/x86_64-linux-gnu/bits/string_fortified.h **** }
+  32:/usr/include/x86_64-linux-gnu/bits/string_fortified.h **** 
+  33:/usr/include/x86_64-linux-gnu/bits/string_fortified.h **** __fortify_function void *
+  34:/usr/include/x86_64-linux-gnu/bits/string_fortified.h **** __NTH (memmove (void *__dest, const void *__src, size_t __len))
+  35:/usr/include/x86_64-linux-gnu/bits/string_fortified.h **** {
+  36:/usr/include/x86_64-linux-gnu/bits/string_fortified.h ****   return __builtin___memmove_chk (__dest, __src, __len,
+  37:/usr/include/x86_64-linux-gnu/bits/string_fortified.h **** 				  __glibc_objsize0 (__dest));
+  38:/usr/include/x86_64-linux-gnu/bits/string_fortified.h **** }
+  39:/usr/include/x86_64-linux-gnu/bits/string_fortified.h **** 
+  40:/usr/include/x86_64-linux-gnu/bits/string_fortified.h **** #ifdef __USE_GNU
+  41:/usr/include/x86_64-linux-gnu/bits/string_fortified.h **** __fortify_function void *
+  42:/usr/include/x86_64-linux-gnu/bits/string_fortified.h **** __NTH (mempcpy (void *__restrict __dest, const void *__restrict __src,
+  43:/usr/include/x86_64-linux-gnu/bits/string_fortified.h **** 		size_t __len))
+  44:/usr/include/x86_64-linux-gnu/bits/string_fortified.h **** {
+  45:/usr/include/x86_64-linux-gnu/bits/string_fortified.h ****   return __builtin___mempcpy_chk (__dest, __src, __len,
+  46:/usr/include/x86_64-linux-gnu/bits/string_fortified.h **** 				  __glibc_objsize0 (__dest));
+  47:/usr/include/x86_64-linux-gnu/bits/string_fortified.h **** }
+  48:/usr/include/x86_64-linux-gnu/bits/string_fortified.h **** #endif
+  49:/usr/include/x86_64-linux-gnu/bits/string_fortified.h **** 
+  50:/usr/include/x86_64-linux-gnu/bits/string_fortified.h **** 
+  51:/usr/include/x86_64-linux-gnu/bits/string_fortified.h **** /* The first two tests here help to catch a somewhat common problem
+  52:/usr/include/x86_64-linux-gnu/bits/string_fortified.h ****    where the second and third parameter are transposed.  This is
+  53:/usr/include/x86_64-linux-gnu/bits/string_fortified.h ****    especially problematic if the intended fill value is zero.  In this
+  54:/usr/include/x86_64-linux-gnu/bits/string_fortified.h ****    case no work is done at all.  We detect these problems by referring
+  55:/usr/include/x86_64-linux-gnu/bits/string_fortified.h ****    non-existing functions.  */
+  56:/usr/include/x86_64-linux-gnu/bits/string_fortified.h **** __fortify_function void *
+  57:/usr/include/x86_64-linux-gnu/bits/string_fortified.h **** __NTH (memset (void *__dest, int __ch, size_t __len))
+  26              		.loc 2 57 1 is_stmt 1 view .LVU5
+  27              	.LBB5:
+  58:/usr/include/x86_64-linux-gnu/bits/string_fortified.h **** {
+  59:/usr/include/x86_64-linux-gnu/bits/string_fortified.h ****   return __builtin___memset_chk (__dest, __ch, __len,
+  28              		.loc 2 59 3 view .LVU6
+  29              		.loc 2 59 10 is_stmt 0 view .LVU7
+  30 0011 48C700FF 		movq	$-1, (%rax)
+GAS LISTING /tmp/ccukkZRg.s 			page 3
+
+
+  30      FFFFFF
+  31 0018 48C74008 		movq	$-1, 8(%rax)
+  31      FFFFFFFF 
+  32 0020 48C74010 		movq	$-1, 16(%rax)
+  32      FFFFFFFF 
+  33 0028 48C74018 		movq	$-1, 24(%rax)
+  33      FFFFFFFF 
+  34 0030 48C74020 		movq	$-1, 32(%rax)
+  34      FFFFFFFF 
+  35 0038 48C74028 		movq	$-1, 40(%rax)
+  35      FFFFFFFF 
+  36 0040 48C74030 		movq	$-1, 48(%rax)
+  36      FFFFFFFF 
+  37 0048 48C74038 		movq	$-1, 56(%rax)
+  37      FFFFFFFF 
+  38 0050 48C74040 		movq	$-1, 64(%rax)
+  38      FFFFFFFF 
+  39 0058 48C74048 		movq	$-1, 72(%rax)
+  39      FFFFFFFF 
+  40 0060 48C74050 		movq	$-1, 80(%rax)
+  40      FFFFFFFF 
+  41 0068 48C74058 		movq	$-1, 88(%rax)
+  41      FFFFFFFF 
+  42 0070 48C74060 		movq	$-1, 96(%rax)
+  42      FFFFFFFF 
+  43 0078 48C74068 		movq	$-1, 104(%rax)
+  43      FFFFFFFF 
+  44 0080 48C74070 		movq	$-1, 112(%rax)
+  44      FFFFFFFF 
+  45 0088 48C74078 		movq	$-1, 120(%rax)
+  45      FFFFFFFF 
+  46              	.LVL2:
+  47              		.loc 2 59 10 view .LVU8
+  48              	.LBE5:
+  49              	.LBE4:
+  26:./port/simul/port_flash.c **** 
+  27:./port/simul/port_flash.c **** 	return true;
+  50              		.loc 1 27 2 is_stmt 1 view .LVU9
+  28:./port/simul/port_flash.c **** }
+  51              		.loc 1 28 1 is_stmt 0 view .LVU10
+  52 0090 B8010000 		movl	$1, %eax
+  52      00
+  53 0095 C3       		ret
+  54              		.cfi_endproc
+  55              	.LFE12:
+  57              		.section	.text.kved_flash_data_write,"ax",@progbits
+  58              		.globl	kved_flash_data_write
+  60              	kved_flash_data_write:
+  61              	.LVL3:
+  62              	.LFB13:
+  29:./port/simul/port_flash.c **** 
+  30:./port/simul/port_flash.c **** void kved_flash_data_write(kved_flash_sector_t sec, uint16_t index, kved_word_t data)
+  31:./port/simul/port_flash.c **** {
+  63              		.loc 1 31 1 is_stmt 1 view -0
+  64              		.cfi_startproc
+  65              		.loc 1 31 1 is_stmt 0 view .LVU12
+  66 0000 F30F1EFA 		endbr64
+GAS LISTING /tmp/ccukkZRg.s 			page 4
+
+
+  32:./port/simul/port_flash.c **** 	sector_address[sec][index] = data;
+  67              		.loc 1 32 2 is_stmt 1 view .LVU13
+  68              		.loc 1 32 16 is_stmt 0 view .LVU14
+  69 0004 89FF     		movl	%edi, %edi
+  70              		.loc 1 32 21 view .LVU15
+  71 0006 0FB7F6   		movzwl	%si, %esi
+  72              		.loc 1 32 21 view .LVU16
+  73 0009 48C1E603 		salq	$3, %rsi
+  74              	.LVL4:
+  75              		.loc 1 32 21 view .LVU17
+  76 000d 488D0500 		leaq	sector_address(%rip), %rax
+  76      000000
+  77 0014 480334F8 		addq	(%rax,%rdi,8), %rsi
+  78              		.loc 1 32 29 view .LVU18
+  79 0018 488916   		movq	%rdx, (%rsi)
+  33:./port/simul/port_flash.c **** }
+  80              		.loc 1 33 1 view .LVU19
+  81 001b C3       		ret
+  82              		.cfi_endproc
+  83              	.LFE13:
+  85              		.section	.text.kved_flash_data_read,"ax",@progbits
+  86              		.globl	kved_flash_data_read
+  88              	kved_flash_data_read:
+  89              	.LVL5:
+  90              	.LFB14:
+  34:./port/simul/port_flash.c **** 
+  35:./port/simul/port_flash.c **** kved_word_t kved_flash_data_read(kved_flash_sector_t sec, uint16_t index)
+  36:./port/simul/port_flash.c **** {
+  91              		.loc 1 36 1 is_stmt 1 view -0
+  92              		.cfi_startproc
+  93              		.loc 1 36 1 is_stmt 0 view .LVU21
+  94 0000 F30F1EFA 		endbr64
+  37:./port/simul/port_flash.c **** 	return sector_address[sec][index];
+  95              		.loc 1 37 2 is_stmt 1 view .LVU22
+  96              		.loc 1 37 23 is_stmt 0 view .LVU23
+  97 0004 89FF     		movl	%edi, %edi
+  98              		.loc 1 37 23 view .LVU24
+  99 0006 488D0500 		leaq	sector_address(%rip), %rax
+  99      000000
+ 100 000d 488B04F8 		movq	(%rax,%rdi,8), %rax
+ 101              		.loc 1 37 28 view .LVU25
+ 102 0011 0FB7F6   		movzwl	%si, %esi
+ 103              		.loc 1 37 28 view .LVU26
+ 104 0014 488B04F0 		movq	(%rax,%rsi,8), %rax
+  38:./port/simul/port_flash.c **** }
+ 105              		.loc 1 38 1 view .LVU27
+ 106 0018 C3       		ret
+ 107              		.cfi_endproc
+ 108              	.LFE14:
+ 110              		.section	.text.kved_flash_sector_size,"ax",@progbits
+ 111              		.globl	kved_flash_sector_size
+ 113              	kved_flash_sector_size:
+ 114              	.LFB15:
+  39:./port/simul/port_flash.c **** 
+  40:./port/simul/port_flash.c **** uint32_t kved_flash_sector_size(void)
+  41:./port/simul/port_flash.c **** {
+ 115              		.loc 1 41 1 is_stmt 1 view -0
+GAS LISTING /tmp/ccukkZRg.s 			page 5
+
+
+ 116              		.cfi_startproc
+ 117 0000 F30F1EFA 		endbr64
+  42:./port/simul/port_flash.c **** 	// sector sizes must be equal
+  43:./port/simul/port_flash.c **** 	return FLASH_SECTOR_SIZE;
+ 118              		.loc 1 43 2 view .LVU29
+  44:./port/simul/port_flash.c **** }
+ 119              		.loc 1 44 1 is_stmt 0 view .LVU30
+ 120 0004 B8800000 		movl	$128, %eax
+ 120      00
+ 121 0009 C3       		ret
+ 122              		.cfi_endproc
+ 123              	.LFE15:
+ 125              		.section	.text.kved_flash_init,"ax",@progbits
+ 126              		.globl	kved_flash_init
+ 128              	kved_flash_init:
+ 129              	.LFB16:
+  45:./port/simul/port_flash.c **** 
+  46:./port/simul/port_flash.c **** void kved_flash_init(void)
+  47:./port/simul/port_flash.c **** {
+ 130              		.loc 1 47 1 is_stmt 1 view -0
+ 131              		.cfi_startproc
+ 132 0000 F30F1EFA 		endbr64
+  48:./port/simul/port_flash.c **** 	kved_flash_sector_erase(KVED_FLASH_SECTOR_A);
+ 133              		.loc 1 48 2 view .LVU32
+ 134 0004 BF000000 		movl	$0, %edi
+ 134      00
+ 135 0009 E8000000 		call	kved_flash_sector_erase
+ 135      00
+ 136              	.LVL6:
+  49:./port/simul/port_flash.c **** 	kved_flash_sector_erase(KVED_FLASH_SECTOR_B);
+ 137              		.loc 1 49 2 view .LVU33
+ 138 000e BF010000 		movl	$1, %edi
+ 138      00
+ 139 0013 E8000000 		call	kved_flash_sector_erase
+ 139      00
+ 140              	.LVL7:
+  50:./port/simul/port_flash.c **** }
+ 141              		.loc 1 50 1 is_stmt 0 view .LVU34
+ 142 0018 C3       		ret
+ 143              		.cfi_endproc
+ 144              	.LFE16:
+ 146              		.globl	sector_address
+ 147              		.section	.data.rel.local.sector_address,"aw"
+ 148              		.align 16
+ 151              	sector_address:
+ 152 0000 00000000 		.quad	data_bank0
+ 152      00000000 
+ 153 0008 00000000 		.quad	data_bank1
+ 153      00000000 
+ 154              		.globl	data_bank1
+ 155              		.section	.bss.data_bank1,"aw",@nobits
+ 156              		.align 32
+ 159              	data_bank1:
+ 160 0000 00000000 		.zero	128
+ 160      00000000 
+ 160      00000000 
+ 160      00000000 
+GAS LISTING /tmp/ccukkZRg.s 			page 6
+
+
+ 160      00000000 
+ 161              		.globl	data_bank0
+ 162              		.section	.bss.data_bank0,"aw",@nobits
+ 163              		.align 32
+ 166              	data_bank0:
+ 167 0000 00000000 		.zero	128
+ 167      00000000 
+ 167      00000000 
+ 167      00000000 
+ 167      00000000 
+ 168              		.text
+ 169              	.Letext0:
+ 170              		.file 3 "/usr/include/x86_64-linux-gnu/bits/types.h"
+ 171              		.file 4 "/usr/include/x86_64-linux-gnu/bits/stdint-uintn.h"
+ 172              		.file 5 "/usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h"
+ 173              		.file 6 "./kved.h"
+ 174              		.file 7 "./kved_flash.h"
+ 1091              		.section	.note.gnu.property,"a"
+ 1092              		.align 8
+ 1093 0000 04000000 		.long	1f - 0f
+ 1094 0004 10000000 		.long	4f - 1f
+ 1095 0008 05000000 		.long	5
+ 1096              	0:
+ 1097 000c 474E5500 		.string	"GNU"
+ 1098              	1:
+ 1099              		.align 8
+ 1100 0010 020000C0 		.long	0xc0000002
+ 1101 0014 04000000 		.long	3f - 2f
+ 1102              	2:
+ 1103 0018 03000000 		.long	0x3
+ 1104              	3:
+ 1105 001c 00000000 		.align 8
+ 1106              	4:
+GAS LISTING /tmp/ccukkZRg.s 			page 7
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 port_flash.c
+     /tmp/ccukkZRg.s:8      .text.kved_flash_sector_erase:0000000000000000 kved_flash_sector_erase
+     /tmp/ccukkZRg.s:151    .data.rel.local.sector_address:0000000000000000 sector_address
+     /tmp/ccukkZRg.s:60     .text.kved_flash_data_write:0000000000000000 kved_flash_data_write
+     /tmp/ccukkZRg.s:88     .text.kved_flash_data_read:0000000000000000 kved_flash_data_read
+     /tmp/ccukkZRg.s:113    .text.kved_flash_sector_size:0000000000000000 kved_flash_sector_size
+     /tmp/ccukkZRg.s:128    .text.kved_flash_init:0000000000000000 kved_flash_init
+     /tmp/ccukkZRg.s:166    .bss.data_bank0:0000000000000000 data_bank0
+     /tmp/ccukkZRg.s:159    .bss.data_bank1:0000000000000000 data_bank1
+
+NO UNDEFINED SYMBOLS

@@ -1,0 +1,84 @@
+GAS LISTING /tmp/ccxzGDZZ.s 			page 1
+
+
+   1              		.file	"kved_cpu.c"
+   2              		.text
+   3              	.Ltext0:
+   4              		.file 0 "/home/funera1/repo/kved" "kved_cpu.c"
+   5              		.section	.text.kved_cpu_critical_section_enter,"ax",@progbits
+   6              		.weak	kved_cpu_critical_section_enter
+   8              	kved_cpu_critical_section_enter:
+   9              	.LFB0:
+  10              		.file 1 "kved_cpu.c"
+   1:kved_cpu.c    **** /*
+   2:kved_cpu.c    **** kved (key/value embedded database), a simple key/value database 
+   3:kved_cpu.c    **** implementation for microcontrollers.
+   4:kved_cpu.c    **** 
+   5:kved_cpu.c    **** Copyright (c) 2022 Marcelo Barros de Almeida <marcelobarrosalmeida@gmail.com>
+   6:kved_cpu.c    **** */
+   7:kved_cpu.c    **** 
+   8:kved_cpu.c    **** /**
+   9:kved_cpu.c    **** @file
+  10:kved_cpu.c    **** */
+  11:kved_cpu.c    **** 
+  12:kved_cpu.c    **** #include <stdint.h>
+  13:kved_cpu.c    **** #include <stdbool.h>
+  14:kved_cpu.c    **** 
+  15:kved_cpu.c    **** #include "kved.h"
+  16:kved_cpu.c    **** #include "kved_cpu.h"
+  17:kved_cpu.c    **** 
+  18:kved_cpu.c    **** __weak void kved_cpu_critical_section_enter(void)
+  19:kved_cpu.c    **** {
+  11              		.loc 1 19 1 view -0
+  12              		.cfi_startproc
+  13 0000 F30F1EFA 		endbr64
+  20:kved_cpu.c    **** }
+  14              		.loc 1 20 1 view .LVU1
+  15 0004 C3       		ret
+  16              		.cfi_endproc
+  17              	.LFE0:
+  19              		.section	.text.kved_cpu_critical_section_leave,"ax",@progbits
+  20              		.weak	kved_cpu_critical_section_leave
+  22              	kved_cpu_critical_section_leave:
+  23              	.LFB1:
+  21:kved_cpu.c    **** 
+  22:kved_cpu.c    **** __weak void kved_cpu_critical_section_leave(void)
+  23:kved_cpu.c    **** {   
+  24              		.loc 1 23 1 view -0
+  25              		.cfi_startproc
+  26 0000 F30F1EFA 		endbr64
+  24:kved_cpu.c    **** }
+  27              		.loc 1 24 1 view .LVU3
+  28 0004 C3       		ret
+  29              		.cfi_endproc
+  30              	.LFE1:
+  32              		.text
+  33              	.Letext0:
+ 246              		.section	.note.gnu.property,"a"
+ 247              		.align 8
+ 248 0000 04000000 		.long	1f - 0f
+ 249 0004 10000000 		.long	4f - 1f
+GAS LISTING /tmp/ccxzGDZZ.s 			page 2
+
+
+ 250 0008 05000000 		.long	5
+ 251              	0:
+ 252 000c 474E5500 		.string	"GNU"
+ 253              	1:
+ 254              		.align 8
+ 255 0010 020000C0 		.long	0xc0000002
+ 256 0014 04000000 		.long	3f - 2f
+ 257              	2:
+ 258 0018 03000000 		.long	0x3
+ 259              	3:
+ 260 001c 00000000 		.align 8
+ 261              	4:
+GAS LISTING /tmp/ccxzGDZZ.s 			page 3
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 kved_cpu.c
+     /tmp/ccxzGDZZ.s:8      .text.kved_cpu_critical_section_enter:0000000000000000 kved_cpu_critical_section_enter
+     /tmp/ccxzGDZZ.s:22     .text.kved_cpu_critical_section_leave:0000000000000000 kved_cpu_critical_section_leave
+
+NO UNDEFINED SYMBOLS

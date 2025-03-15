@@ -22,14 +22,14 @@ compiler_prefix = GetOption('compiler_prefix')
 target = GetOption('target')
 
 env_options = {
-    # "CC"    : compiler_prefix + "gcc",
-    "CC"    : "/opt/wasi-sdk/bin/clang",
+    "CC"    : compiler_prefix + "gcc",
+    # "CC"    : "/opt/wasi-sdk-16.0/bin/clang",
     "CXX"   : compiler_prefix + "g++",
     "LD"    : compiler_prefix + "g++",
     "AR"    : compiler_prefix + "ar",
     "STRIP" : compiler_prefix + "strip",
     "PATH"  : os.environ['PATH'],
-	"CCFLAGS" : ['-pedantic','-std=c11','-g','-Wall','-D_GNU_SOURCE ','-DSIMUL'],
+	"CCFLAGS" : ['-O3', '-pedantic','-std=c11','-g','-Wall','-D_GNU_SOURCE ','-DSIMUL'],
     "CPPPATH" : ['.'],
 	"LINKFLAGS" : ['-Wall'],
 }

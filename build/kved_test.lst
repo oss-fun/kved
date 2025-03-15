@@ -1,0 +1,2041 @@
+GAS LISTING /tmp/cchhzlxh.s 			page 1
+
+
+   1              		.file	"kved_test.c"
+   2              		.text
+   3              	.Ltext0:
+   4              		.file 0 "/home/funera1/repo/kved" "./test/kved_test.c"
+   5              		.section	.rodata.kved_value_test.str1.1,"aMS",@progbits,1
+   6              	.LC0:
+   7 0000 2E2F7465 		.string	"./test/kved_test.c"
+   7      73742F6B 
+   7      7665645F 
+   7      74657374 
+   7      2E6300
+   8              	.LC1:
+   9 0013 762E7538 		.string	"v.u8 == d.value.u8"
+   9      203D3D20 
+   9      642E7661 
+   9      6C75652E 
+   9      753800
+  10              	.LC2:
+  11 0026 762E6938 		.string	"v.i8 == d.value.i8"
+  11      203D3D20 
+  11      642E7661 
+  11      6C75652E 
+  11      693800
+  12              	.LC3:
+  13 0039 762E7531 		.string	"v.u16 == d.value.u16"
+  13      36203D3D 
+  13      20642E76 
+  13      616C7565 
+  13      2E753136 
+  14              	.LC4:
+  15 004e 762E6931 		.string	"v.i16 == d.value.i16"
+  15      36203D3D 
+  15      20642E76 
+  15      616C7565 
+  15      2E693136 
+  16              	.LC5:
+  17 0063 762E7533 		.string	"v.u32 == d.value.u32"
+  17      32203D3D 
+  17      20642E76 
+  17      616C7565 
+  17      2E753332 
+  18              	.LC6:
+  19 0078 762E6933 		.string	"v.i32 == d.value.i32"
+  19      32203D3D 
+  19      20642E76 
+  19      616C7565 
+  19      2E693332 
+  20              	.LC8:
+  21 008d 762E666C 		.string	"v.flt == d.value.flt"
+  21      74203D3D 
+  21      20642E76 
+  21      616C7565 
+  21      2E666C74 
+  22              	.LC9:
+  23 00a2 762E7374 		.string	"v.str[0] == d.value.str[0]"
+  23      725B305D 
+  23      203D3D20 
+GAS LISTING /tmp/cchhzlxh.s 			page 2
+
+
+  23      642E7661 
+  23      6C75652E 
+  24              	.LC10:
+  25 00bd 762E7374 		.string	"v.str[1] == d.value.str[1]"
+  25      725B315D 
+  25      203D3D20 
+  25      642E7661 
+  25      6C75652E 
+  26              	.LC11:
+  27 00d8 762E7374 		.string	"v.str[2] == d.value.str[2]"
+  27      725B325D 
+  27      203D3D20 
+  27      642E7661 
+  27      6C75652E 
+  28              	.LC12:
+  29 00f3 762E7374 		.string	"v.str[3] == d.value.str[3]"
+  29      725B335D 
+  29      203D3D20 
+  29      642E7661 
+  29      6C75652E 
+  30              	.LC13:
+  31 010e 762E7536 		.string	"v.u64 == d.value.u64"
+  31      34203D3D 
+  31      20642E76 
+  31      616C7565 
+  31      2E753634 
+  32              	.LC14:
+  33 0123 762E6936 		.string	"v.i64 == d.value.i64"
+  33      34203D3D 
+  33      20642E76 
+  33      616C7565 
+  33      2E693634 
+  34              	.LC16:
+  35 0138 762E6462 		.string	"v.dbl == d.value.dbl"
+  35      6C203D3D 
+  35      20642E76 
+  35      616C7565 
+  35      2E64626C 
+  36              	.LC17:
+  37 014d 762E7374 		.string	"v.str[4] == d.value.str[4]"
+  37      725B345D 
+  37      203D3D20 
+  37      642E7661 
+  37      6C75652E 
+  38              	.LC18:
+  39 0168 762E7374 		.string	"v.str[5] == d.value.str[5]"
+  39      725B355D 
+  39      203D3D20 
+  39      642E7661 
+  39      6C75652E 
+  40              	.LC19:
+  41 0183 762E7374 		.string	"v.str[6] == d.value.str[6]"
+  41      725B365D 
+  41      203D3D20 
+  41      642E7661 
+  41      6C75652E 
+  42              	.LC20:
+GAS LISTING /tmp/cchhzlxh.s 			page 3
+
+
+  43 019e 762E7374 		.string	"v.str[7] == d.value.str[7]"
+  43      725B375D 
+  43      203D3D20 
+  43      642E7661 
+  43      6C75652E 
+  44              		.section	.text.kved_value_test,"ax",@progbits
+  45              		.globl	kved_value_test
+  47              	kved_value_test:
+  48              	.LFB35:
+  49              		.file 1 "./test/kved_test.c"
+   1:./test/kved_test.c **** /*
+   2:./test/kved_test.c **** kved (key/value embedded database), a simple key/value database 
+   3:./test/kved_test.c **** implementation for microcontrollers.
+   4:./test/kved_test.c **** 
+   5:./test/kved_test.c **** Copyright (c) 2022 Marcelo Barros de Almeida <marcelobarrosalmeida@gmail.com>
+   6:./test/kved_test.c **** */
+   7:./test/kved_test.c **** 
+   8:./test/kved_test.c **** #include <stdint.h>
+   9:./test/kved_test.c **** #include <stdbool.h>
+  10:./test/kved_test.c **** #include <string.h>
+  11:./test/kved_test.c **** #include <stdio.h>
+  12:./test/kved_test.c **** #include <assert.h>
+  13:./test/kved_test.c **** 
+  14:./test/kved_test.c **** #include "kved.h"
+  15:./test/kved_test.c **** #include "kved_cpu.h"
+  16:./test/kved_test.c **** #include "kved_flash.h"
+  17:./test/kved_test.c **** 
+  18:./test/kved_test.c **** void kved_value_test(void)
+  19:./test/kved_test.c **** {
+  50              		.loc 1 19 1 view -0
+  51              		.cfi_startproc
+  52 0000 F30F1EFA 		endbr64
+  53 0004 4157     		pushq	%r15
+  54              		.cfi_def_cfa_offset 16
+  55              		.cfi_offset 15, -16
+  56 0006 4156     		pushq	%r14
+  57              		.cfi_def_cfa_offset 24
+  58              		.cfi_offset 14, -24
+  59 0008 4155     		pushq	%r13
+  60              		.cfi_def_cfa_offset 32
+  61              		.cfi_offset 13, -32
+  62 000a 4154     		pushq	%r12
+  63              		.cfi_def_cfa_offset 40
+  64              		.cfi_offset 12, -40
+  65 000c 55       		pushq	%rbp
+  66              		.cfi_def_cfa_offset 48
+  67              		.cfi_offset 6, -48
+  68 000d 53       		pushq	%rbx
+  69              		.cfi_def_cfa_offset 56
+  70              		.cfi_offset 3, -56
+  71 000e 4883EC58 		subq	$88, %rsp
+  72              		.cfi_def_cfa_offset 144
+  73              		.loc 1 19 1 is_stmt 0 view .LVU1
+  74 0012 64488B04 		movq	%fs:40, %rax
+  74      25280000 
+  74      00
+  75 001b 48894424 		movq	%rax, 72(%rsp)
+GAS LISTING /tmp/cchhzlxh.s 			page 4
+
+
+  75      48
+  76 0020 31C0     		xorl	%eax, %eax
+  20:./test/kved_test.c **** 	kved_value_t v;
+  77              		.loc 1 20 2 is_stmt 1 view .LVU2
+  21:./test/kved_test.c **** 
+  22:./test/kved_test.c **** 	kved_data_t d = { .key = "A1" };
+  78              		.loc 1 22 2 view .LVU3
+  79              		.loc 1 22 14 is_stmt 0 view .LVU4
+  80 0022 48C74424 		movq	$0, 16(%rsp)
+  80      10000000 
+  80      00
+  81 002b 48C74424 		movq	$0, 24(%rsp)
+  81      18000000 
+  81      00
+  82 0034 48C74424 		movq	$0, 32(%rsp)
+  82      20000000 
+  82      00
+  83 003d C7442418 		movl	$12609, 24(%rsp)
+  83      41310000 
+  84 0045 66C74424 		movw	$0, 28(%rsp)
+  84      1C0000
+  85 004c C644241E 		movb	$0, 30(%rsp)
+  85      00
+  23:./test/kved_test.c **** 
+  24:./test/kved_test.c **** 	// U8
+  25:./test/kved_test.c **** 	d.type = KVED_DATA_TYPE_UINT8;
+  86              		.loc 1 25 2 is_stmt 1 view .LVU5
+  26:./test/kved_test.c **** 	d.value.u8 = UINT8_MAX;
+  87              		.loc 1 26 2 view .LVU6
+  88              		.loc 1 26 13 is_stmt 0 view .LVU7
+  89 0051 C6442410 		movb	$-1, 16(%rsp)
+  89      FF
+  27:./test/kved_test.c **** 	v.u8 = d.value.u8;
+  90              		.loc 1 27 2 is_stmt 1 view .LVU8
+  28:./test/kved_test.c **** 	kved_data_write(&d);
+  91              		.loc 1 28 2 view .LVU9
+  92 0056 488D5C24 		leaq	16(%rsp), %rbx
+  92      10
+  93 005b 4889DF   		movq	%rbx, %rdi
+  94 005e E8000000 		call	kved_data_write@PLT
+  94      00
+  95              	.LVL0:
+  29:./test/kved_test.c **** 	kved_data_read(&d);
+  96              		.loc 1 29 2 view .LVU10
+  97 0063 4889DF   		movq	%rbx, %rdi
+  98 0066 E8000000 		call	kved_data_read@PLT
+  98      00
+  99              	.LVL1:
+  30:./test/kved_test.c **** 	assert(v.u8 == d.value.u8);
+ 100              		.loc 1 30 2 view .LVU11
+ 101 006b 807C2410 		cmpb	$-1, 16(%rsp)
+ 101      FF
+ 102 0070 0F856902 		jne	.L36
+ 102      0000
+ 103 0076 41BCFF00 		movl	$255, %r12d
+ 103      0000
+ 104              	.LVL2:
+GAS LISTING /tmp/cchhzlxh.s 			page 5
+
+
+  31:./test/kved_test.c **** 
+  32:./test/kved_test.c **** 	// I8
+  33:./test/kved_test.c **** 	d.type = KVED_DATA_TYPE_INT8;
+ 105              		.loc 1 33 2 view .LVU12
+ 106              		.loc 1 33 9 is_stmt 0 view .LVU13
+ 107 007c C7442420 		movl	$1, 32(%rsp)
+ 107      01000000 
+  34:./test/kved_test.c **** 	d.value.i8 = INT8_MIN;
+ 108              		.loc 1 34 2 is_stmt 1 view .LVU14
+ 109              		.loc 1 34 13 is_stmt 0 view .LVU15
+ 110 0084 C6442410 		movb	$-128, 16(%rsp)
+ 110      80
+  35:./test/kved_test.c **** 	v.i8 = d.value.i8;
+ 111              		.loc 1 35 2 is_stmt 1 view .LVU16
+ 112              		.loc 1 35 7 is_stmt 0 view .LVU17
+ 113 0089 41B480   		movb	$-128, %r12b
+  36:./test/kved_test.c **** 	kved_data_write(&d);
+ 114              		.loc 1 36 2 is_stmt 1 view .LVU18
+ 115 008c 488D5C24 		leaq	16(%rsp), %rbx
+ 115      10
+ 116 0091 4889DF   		movq	%rbx, %rdi
+ 117 0094 E8000000 		call	kved_data_write@PLT
+ 117      00
+ 118              	.LVL3:
+  37:./test/kved_test.c **** 	kved_data_read(&d);
+ 119              		.loc 1 37 2 view .LVU19
+ 120 0099 4889DF   		movq	%rbx, %rdi
+ 121 009c E8000000 		call	kved_data_read@PLT
+ 121      00
+ 122              	.LVL4:
+  38:./test/kved_test.c **** 	assert(v.i8 == d.value.i8);
+ 123              		.loc 1 38 2 view .LVU20
+ 124 00a1 807C2410 		cmpb	$-128, 16(%rsp)
+ 124      80
+ 125 00a6 0F855202 		jne	.L37
+ 125      0000
+  39:./test/kved_test.c **** 
+  40:./test/kved_test.c **** 	// U16
+  41:./test/kved_test.c **** 	d.type = KVED_DATA_TYPE_UINT16;
+ 126              		.loc 1 41 2 view .LVU21
+ 127              		.loc 1 41 9 is_stmt 0 view .LVU22
+ 128 00ac C7442420 		movl	$2, 32(%rsp)
+ 128      02000000 
+  42:./test/kved_test.c **** 	d.value.u16 = UINT16_MAX;
+ 129              		.loc 1 42 2 is_stmt 1 view .LVU23
+ 130              		.loc 1 42 14 is_stmt 0 view .LVU24
+ 131 00b4 66C74424 		movw	$-1, 16(%rsp)
+ 131      10FFFF
+  43:./test/kved_test.c **** 	v.u16 = d.value.u16;
+ 132              		.loc 1 43 2 is_stmt 1 view .LVU25
+ 133              		.loc 1 43 8 is_stmt 0 view .LVU26
+ 134 00bb 6641BCFF 		movw	$-1, %r12w
+ 134      FF
+  44:./test/kved_test.c **** 	kved_data_write(&d);
+ 135              		.loc 1 44 2 is_stmt 1 view .LVU27
+ 136 00c0 488D5C24 		leaq	16(%rsp), %rbx
+ 136      10
+GAS LISTING /tmp/cchhzlxh.s 			page 6
+
+
+ 137 00c5 4889DF   		movq	%rbx, %rdi
+ 138 00c8 E8000000 		call	kved_data_write@PLT
+ 138      00
+ 139              	.LVL5:
+  45:./test/kved_test.c **** 	kved_data_read(&d);
+ 140              		.loc 1 45 2 view .LVU28
+ 141 00cd 4889DF   		movq	%rbx, %rdi
+ 142 00d0 E8000000 		call	kved_data_read@PLT
+ 142      00
+ 143              	.LVL6:
+  46:./test/kved_test.c **** 	assert(v.u16 == d.value.u16);
+ 144              		.loc 1 46 2 view .LVU29
+ 145 00d5 66837C24 		cmpw	$-1, 16(%rsp)
+ 145      10FF
+ 146 00db 0F853C02 		jne	.L38
+ 146      0000
+  47:./test/kved_test.c **** 
+  48:./test/kved_test.c **** 	// I16
+  49:./test/kved_test.c **** 	d.type = KVED_DATA_TYPE_INT16;
+ 147              		.loc 1 49 2 view .LVU30
+ 148              		.loc 1 49 9 is_stmt 0 view .LVU31
+ 149 00e1 C7442420 		movl	$3, 32(%rsp)
+ 149      03000000 
+  50:./test/kved_test.c **** 	d.value.i16 = INT16_MIN;
+ 150              		.loc 1 50 2 is_stmt 1 view .LVU32
+ 151              		.loc 1 50 14 is_stmt 0 view .LVU33
+ 152 00e9 66C74424 		movw	$-32768, 16(%rsp)
+ 152      100080
+  51:./test/kved_test.c **** 	v.i16 = d.value.i16;
+ 153              		.loc 1 51 2 is_stmt 1 view .LVU34
+ 154              		.loc 1 51 8 is_stmt 0 view .LVU35
+ 155 00f0 6641BC00 		movw	$-32768, %r12w
+ 155      80
+  52:./test/kved_test.c **** 	kved_data_write(&d);
+ 156              		.loc 1 52 2 is_stmt 1 view .LVU36
+ 157 00f5 488D5C24 		leaq	16(%rsp), %rbx
+ 157      10
+ 158 00fa 4889DF   		movq	%rbx, %rdi
+ 159 00fd E8000000 		call	kved_data_write@PLT
+ 159      00
+ 160              	.LVL7:
+  53:./test/kved_test.c **** 	kved_data_read(&d);
+ 161              		.loc 1 53 2 view .LVU37
+ 162 0102 4889DF   		movq	%rbx, %rdi
+ 163 0105 E8000000 		call	kved_data_read@PLT
+ 163      00
+ 164              	.LVL8:
+  54:./test/kved_test.c **** 	assert(v.i16 == d.value.i16);
+ 165              		.loc 1 54 2 view .LVU38
+ 166 010a 66817C24 		cmpw	$-32768, 16(%rsp)
+ 166      100080
+ 167 0111 0F852502 		jne	.L39
+ 167      0000
+  55:./test/kved_test.c **** 
+  56:./test/kved_test.c **** 	// U32
+  57:./test/kved_test.c **** 	d.type = KVED_DATA_TYPE_UINT32;
+ 168              		.loc 1 57 2 view .LVU39
+GAS LISTING /tmp/cchhzlxh.s 			page 7
+
+
+ 169              		.loc 1 57 9 is_stmt 0 view .LVU40
+ 170 0117 C7442420 		movl	$4, 32(%rsp)
+ 170      04000000 
+  58:./test/kved_test.c **** 	d.value.u32 = UINT32_MAX;
+ 171              		.loc 1 58 2 is_stmt 1 view .LVU41
+ 172              		.loc 1 58 14 is_stmt 0 view .LVU42
+ 173 011f C7442410 		movl	$-1, 16(%rsp)
+ 173      FFFFFFFF 
+  59:./test/kved_test.c **** 	v.u32 = d.value.u32;
+ 174              		.loc 1 59 2 is_stmt 1 view .LVU43
+ 175              		.loc 1 59 8 is_stmt 0 view .LVU44
+ 176 0127 BBFFFFFF 		movl	$4294967295, %ebx
+ 176      FF
+ 177              	.LVL9:
+ 178              		.loc 1 59 8 view .LVU45
+ 179 012c 4C09E3   		orq	%r12, %rbx
+  60:./test/kved_test.c **** 	kved_data_write(&d);
+ 180              		.loc 1 60 2 is_stmt 1 view .LVU46
+ 181 012f 488D6C24 		leaq	16(%rsp), %rbp
+ 181      10
+ 182 0134 4889EF   		movq	%rbp, %rdi
+ 183 0137 E8000000 		call	kved_data_write@PLT
+ 183      00
+ 184              	.LVL10:
+  61:./test/kved_test.c **** 	kved_data_read(&d);
+ 185              		.loc 1 61 2 view .LVU47
+ 186 013c 4889EF   		movq	%rbp, %rdi
+ 187 013f E8000000 		call	kved_data_read@PLT
+ 187      00
+ 188              	.LVL11:
+  62:./test/kved_test.c **** 	assert(v.u32 == d.value.u32);
+ 189              		.loc 1 62 2 view .LVU48
+ 190 0144 837C2410 		cmpl	$-1, 16(%rsp)
+ 190      FF
+ 191 0149 0F850C02 		jne	.L40
+ 191      0000
+  63:./test/kved_test.c **** 
+  64:./test/kved_test.c **** 	// I32
+  65:./test/kved_test.c **** 	d.type = KVED_DATA_TYPE_INT32;
+ 192              		.loc 1 65 2 view .LVU49
+ 193              		.loc 1 65 9 is_stmt 0 view .LVU50
+ 194 014f C7442420 		movl	$5, 32(%rsp)
+ 194      05000000 
+  66:./test/kved_test.c **** 	d.value.i32 = INT32_MIN;
+ 195              		.loc 1 66 2 is_stmt 1 view .LVU51
+ 196              		.loc 1 66 14 is_stmt 0 view .LVU52
+ 197 0157 C7442410 		movl	$-2147483648, 16(%rsp)
+ 197      00000080 
+  67:./test/kved_test.c **** 	v.i32 = d.value.i32;
+ 198              		.loc 1 67 2 is_stmt 1 view .LVU53
+ 199              		.loc 1 67 8 is_stmt 0 view .LVU54
+ 200 015f 48B80000 		movabsq	$-4294967296, %rax
+ 200      0000FFFF 
+ 200      FFFF
+ 201 0169 4821C3   		andq	%rax, %rbx
+ 202 016c 480FBAEB 		btsq	$31, %rbx
+ 202      1F
+GAS LISTING /tmp/cchhzlxh.s 			page 8
+
+
+  68:./test/kved_test.c **** 	kved_data_write(&d);
+ 203              		.loc 1 68 2 is_stmt 1 view .LVU55
+ 204 0171 488D6C24 		leaq	16(%rsp), %rbp
+ 204      10
+ 205 0176 4889EF   		movq	%rbp, %rdi
+ 206 0179 E8000000 		call	kved_data_write@PLT
+ 206      00
+ 207              	.LVL12:
+  69:./test/kved_test.c **** 	kved_data_read(&d);
+ 208              		.loc 1 69 2 view .LVU56
+ 209 017e 4889EF   		movq	%rbp, %rdi
+ 210 0181 E8000000 		call	kved_data_read@PLT
+ 210      00
+ 211              	.LVL13:
+  70:./test/kved_test.c **** 	assert(v.i32 == d.value.i32);
+ 212              		.loc 1 70 2 view .LVU57
+ 213 0186 817C2410 		cmpl	$-2147483648, 16(%rsp)
+ 213      00000080 
+ 214 018e 0F85E601 		jne	.L41
+ 214      0000
+  71:./test/kved_test.c **** 
+  72:./test/kved_test.c **** 	// FLOAT
+  73:./test/kved_test.c **** 	d.type = KVED_DATA_TYPE_FLOAT;
+ 215              		.loc 1 73 2 view .LVU58
+ 216              		.loc 1 73 9 is_stmt 0 view .LVU59
+ 217 0194 C7442420 		movl	$6, 32(%rsp)
+ 217      06000000 
+  74:./test/kved_test.c **** 	d.value.flt = 3.141592;
+ 218              		.loc 1 74 2 is_stmt 1 view .LVU60
+ 219              		.loc 1 74 14 is_stmt 0 view .LVU61
+ 220 019c C7442410 		movl	$0x40490fd8, 16(%rsp)
+ 220      D80F4940 
+  75:./test/kved_test.c **** 	v.flt = d.value.flt;
+ 221              		.loc 1 75 2 is_stmt 1 view .LVU62
+ 222              		.loc 1 75 8 is_stmt 0 view .LVU63
+ 223 01a4 48B80000 		movabsq	$-4294967296, %rax
+ 223      0000FFFF 
+ 223      FFFF
+ 224 01ae 4821C3   		andq	%rax, %rbx
+ 225 01b1 4881CBD8 		orq	$1078530008, %rbx
+ 225      0F4940
+ 226 01b8 4989DC   		movq	%rbx, %r12
+ 227              	.LVL14:
+  76:./test/kved_test.c **** 	kved_data_write(&d);
+ 228              		.loc 1 76 2 is_stmt 1 view .LVU64
+ 229 01bb 488D5C24 		leaq	16(%rsp), %rbx
+ 229      10
+ 230 01c0 4889DF   		movq	%rbx, %rdi
+ 231 01c3 E8000000 		call	kved_data_write@PLT
+ 231      00
+ 232              	.LVL15:
+  77:./test/kved_test.c **** 	kved_data_read(&d);
+ 233              		.loc 1 77 2 view .LVU65
+ 234 01c8 4889DF   		movq	%rbx, %rdi
+ 235 01cb E8000000 		call	kved_data_read@PLT
+ 235      00
+ 236              	.LVL16:
+GAS LISTING /tmp/cchhzlxh.s 			page 9
+
+
+  78:./test/kved_test.c **** 	assert(v.flt == d.value.flt);
+ 237              		.loc 1 78 2 view .LVU66
+ 238 01d0 F30F1044 		movss	16(%rsp), %xmm0
+ 238      2410
+ 239 01d6 0F2E0500 		ucomiss	.LC7(%rip), %xmm0
+ 239      000000
+ 240 01dd 0F8AB601 		jp	.L33
+ 240      0000
+ 241 01e3 0F85B001 		jne	.L33
+ 241      0000
+  79:./test/kved_test.c **** 
+  80:./test/kved_test.c **** 	// STRING
+  81:./test/kved_test.c **** 	d.type = KVED_DATA_TYPE_STRING;
+ 242              		.loc 1 81 2 view .LVU67
+ 243              		.loc 1 81 9 is_stmt 0 view .LVU68
+ 244 01e9 C7442420 		movl	$7, 32(%rsp)
+ 244      07000000 
+  82:./test/kved_test.c **** 	v.str[0] = d.value.str[0] = 'A'; 
+ 245              		.loc 1 82 2 is_stmt 1 view .LVU69
+ 246              		.loc 1 82 28 is_stmt 0 view .LVU70
+ 247 01f1 C6442410 		movb	$65, 16(%rsp)
+ 247      41
+ 248              		.loc 1 82 11 view .LVU71
+ 249 01f6 41B441   		movb	$65, %r12b
+  83:./test/kved_test.c **** 	v.str[1] = d.value.str[1] = 'B'; 
+ 250              		.loc 1 83 2 is_stmt 1 view .LVU72
+ 251              		.loc 1 83 28 is_stmt 0 view .LVU73
+ 252 01f9 C6442411 		movb	$66, 17(%rsp)
+ 252      42
+ 253              	.LVL17:
+ 254              		.loc 1 83 11 view .LVU74
+ 255 01fe 4C89E0   		movq	%r12, %rax
+ 256 0201 B442     		movb	$66, %ah
+ 257              	.LVL18:
+ 258              		.loc 1 83 11 view .LVU75
+ 259 0203 4989C4   		movq	%rax, %r12
+  84:./test/kved_test.c **** 	v.str[2] = d.value.str[2] = 'C';
+ 260              		.loc 1 84 2 is_stmt 1 view .LVU76
+ 261              		.loc 1 84 28 is_stmt 0 view .LVU77
+ 262 0206 C6442412 		movb	$67, 18(%rsp)
+ 262      43
+ 263              		.loc 1 84 11 view .LVU78
+ 264 020b 4981E4FF 		andq	$-16711681, %r12
+ 264      FF00FF
+ 265 0212 4981CC00 		orq	$4390912, %r12
+ 265      004300
+  85:./test/kved_test.c **** 	v.str[3] = d.value.str[3] = '\0';
+ 266              		.loc 1 85 2 is_stmt 1 view .LVU79
+ 267              		.loc 1 85 28 is_stmt 0 view .LVU80
+ 268 0219 C6442413 		movb	$0, 19(%rsp)
+ 268      00
+ 269              		.loc 1 85 11 view .LVU81
+ 270 021e 48B8FFFF 		movabsq	$-4278190081, %rax
+ 270      FF00FFFF 
+ 270      FFFF
+ 271              	.LVL19:
+ 272              		.loc 1 85 11 view .LVU82
+GAS LISTING /tmp/cchhzlxh.s 			page 10
+
+
+ 273 0228 4921C4   		andq	%rax, %r12
+  86:./test/kved_test.c **** 	kved_data_write(&d);
+ 274              		.loc 1 86 2 is_stmt 1 view .LVU83
+ 275 022b 488D5C24 		leaq	16(%rsp), %rbx
+ 275      10
+ 276 0230 4889DF   		movq	%rbx, %rdi
+ 277 0233 E8000000 		call	kved_data_write@PLT
+ 277      00
+ 278              	.LVL20:
+  87:./test/kved_test.c **** 	kved_data_read(&d);
+ 279              		.loc 1 87 2 view .LVU84
+ 280 0238 4889DF   		movq	%rbx, %rdi
+ 281 023b E8000000 		call	kved_data_read@PLT
+ 281      00
+ 282              	.LVL21:
+  88:./test/kved_test.c **** 	assert(v.str[0] == d.value.str[0]);
+ 283              		.loc 1 88 2 view .LVU85
+ 284 0240 807C2410 		cmpb	$65, 16(%rsp)
+ 284      41
+ 285 0245 0F856D01 		jne	.L42
+ 285      0000
+  89:./test/kved_test.c **** 	assert(v.str[1] == d.value.str[1]);
+ 286              		.loc 1 89 2 view .LVU86
+ 287 024b 807C2411 		cmpb	$66, 17(%rsp)
+ 287      42
+ 288 0250 0F858101 		jne	.L43
+ 288      0000
+  90:./test/kved_test.c **** 	assert(v.str[2] == d.value.str[2]);
+ 289              		.loc 1 90 2 view .LVU87
+ 290 0256 807C2412 		cmpb	$67, 18(%rsp)
+ 290      43
+ 291 025b 0F859501 		jne	.L44
+ 291      0000
+  91:./test/kved_test.c **** 	assert(v.str[3] == d.value.str[3]);
+ 292              		.loc 1 91 2 view .LVU88
+ 293 0261 807C2413 		cmpb	$0, 19(%rsp)
+ 293      00
+ 294 0266 0F85A901 		jne	.L45
+ 294      0000
+  92:./test/kved_test.c **** 
+  93:./test/kved_test.c **** 	// Forcing roll over (sector a)
+  94:./test/kved_test.c **** 	d.type = KVED_DATA_TYPE_UINT32;
+ 295              		.loc 1 94 2 view .LVU89
+ 296              		.loc 1 94 9 is_stmt 0 view .LVU90
+ 297 026c C7442420 		movl	$4, 32(%rsp)
+ 297      04000000 
+  95:./test/kved_test.c **** 	for(size_t n = 0 ; n < (kved_flash_sector_size()/(2*sizeof(kved_word_t))) ; n++)
+ 298              		.loc 1 95 2 is_stmt 1 view .LVU91
+ 299              	.LBB2:
+ 300              		.loc 1 95 6 view .LVU92
+ 301              	.LVL22:
+ 302              		.loc 1 95 13 is_stmt 0 view .LVU93
+ 303 0274 BD000000 		movl	$0, %ebp
+ 303      00
+ 304              	.LVL23:
+ 305              	.L14:
+ 306              		.loc 1 95 23 is_stmt 1 discriminator 1 view .LVU94
+GAS LISTING /tmp/cchhzlxh.s 			page 11
+
+
+ 307              		.loc 1 95 26 is_stmt 0 discriminator 1 view .LVU95
+ 308 0279 E8000000 		call	kved_flash_sector_size@PLT
+ 308      00
+ 309              	.LVL24:
+ 310              		.loc 1 95 50 discriminator 1 view .LVU96
+ 311 027e C1E804   		shrl	$4, %eax
+ 312 0281 89C0     		movl	%eax, %eax
+ 313              		.loc 1 95 23 discriminator 1 view .LVU97
+ 314 0283 4839E8   		cmpq	%rbp, %rax
+ 315 0286 0F86C701 		jbe	.L46
+ 315      0000
+  96:./test/kved_test.c **** 	{
+  97:./test/kved_test.c **** 		d.value.u32 = (n << 24) | (n << 16) | (n << 8) |n;
+ 316              		.loc 1 97 3 is_stmt 1 view .LVU98
+ 317              		.loc 1 97 20 is_stmt 0 view .LVU99
+ 318 028c 89EB     		movl	%ebp, %ebx
+ 319 028e C1E318   		sall	$24, %ebx
+ 320              		.loc 1 97 32 view .LVU100
+ 321 0291 89E8     		movl	%ebp, %eax
+ 322 0293 C1E010   		sall	$16, %eax
+ 323              		.loc 1 97 27 view .LVU101
+ 324 0296 09C3     		orl	%eax, %ebx
+ 325              		.loc 1 97 44 view .LVU102
+ 326 0298 89E8     		movl	%ebp, %eax
+ 327 029a C1E008   		sall	$8, %eax
+ 328              		.loc 1 97 39 view .LVU103
+ 329 029d 09C3     		orl	%eax, %ebx
+ 330              		.loc 1 97 50 view .LVU104
+ 331 029f 09EB     		orl	%ebp, %ebx
+ 332              		.loc 1 97 15 view .LVU105
+ 333 02a1 895C2410 		movl	%ebx, 16(%rsp)
+  98:./test/kved_test.c **** 		v.u32 = d.value.u32;
+ 334              		.loc 1 98 3 is_stmt 1 view .LVU106
+ 335              		.loc 1 98 9 is_stmt 0 view .LVU107
+ 336 02a5 89DA     		movl	%ebx, %edx
+ 337 02a7 48B80000 		movabsq	$-4294967296, %rax
+ 337      0000FFFF 
+ 337      FFFF
+ 338              	.LVL25:
+ 339              		.loc 1 98 9 view .LVU108
+ 340 02b1 4C21E0   		andq	%r12, %rax
+ 341 02b4 4809D0   		orq	%rdx, %rax
+ 342 02b7 4989C4   		movq	%rax, %r12
+ 343              	.LVL26:
+  99:./test/kved_test.c **** 		kved_data_write(&d);
+ 344              		.loc 1 99 3 is_stmt 1 view .LVU109
+ 345 02ba 4C8D6C24 		leaq	16(%rsp), %r13
+ 345      10
+ 346 02bf 4C89EF   		movq	%r13, %rdi
+ 347 02c2 E8000000 		call	kved_data_write@PLT
+ 347      00
+ 348              	.LVL27:
+ 100:./test/kved_test.c **** 		kved_data_read(&d);
+ 349              		.loc 1 100 3 view .LVU110
+ 350 02c7 4C89EF   		movq	%r13, %rdi
+ 351 02ca E8000000 		call	kved_data_read@PLT
+ 351      00
+GAS LISTING /tmp/cchhzlxh.s 			page 12
+
+
+ 352              	.LVL28:
+ 101:./test/kved_test.c **** 		assert(v.u32 == d.value.u32);
+ 353              		.loc 1 101 3 view .LVU111
+ 354 02cf 3B5C2410 		cmpl	16(%rsp), %ebx
+ 355 02d3 0F855B01 		jne	.L47
+ 355      0000
+  95:./test/kved_test.c **** 	{
+ 356              		.loc 1 95 79 discriminator 2 view .LVU112
+ 357 02d9 4883C501 		addq	$1, %rbp
+ 358              	.LVL29:
+  95:./test/kved_test.c **** 	{
+ 359              		.loc 1 95 79 is_stmt 0 discriminator 2 view .LVU113
+ 360 02dd EB9A     		jmp	.L14
+ 361              	.LVL30:
+ 362              	.L36:
+  95:./test/kved_test.c **** 	{
+ 363              		.loc 1 95 79 discriminator 2 view .LVU114
+ 364              	.LBE2:
+  30:./test/kved_test.c **** 
+ 365              		.loc 1 30 2 is_stmt 1 discriminator 1 view .LVU115
+ 366 02df 488D0D00 		leaq	__PRETTY_FUNCTION__.0(%rip), %rcx
+ 366      000000
+ 367 02e6 BA1E0000 		movl	$30, %edx
+ 367      00
+ 368 02eb 488D3500 		leaq	.LC0(%rip), %rsi
+ 368      000000
+ 369 02f2 488D3D00 		leaq	.LC1(%rip), %rdi
+ 369      000000
+ 370 02f9 E8000000 		call	__assert_fail@PLT
+ 370      00
+ 371              	.LVL31:
+ 372              	.L37:
+  38:./test/kved_test.c **** 
+ 373              		.loc 1 38 2 discriminator 1 view .LVU116
+ 374 02fe 488D0D00 		leaq	__PRETTY_FUNCTION__.0(%rip), %rcx
+ 374      000000
+ 375 0305 BA260000 		movl	$38, %edx
+ 375      00
+ 376 030a 488D3500 		leaq	.LC0(%rip), %rsi
+ 376      000000
+ 377 0311 488D3D00 		leaq	.LC2(%rip), %rdi
+ 377      000000
+ 378 0318 E8000000 		call	__assert_fail@PLT
+ 378      00
+ 379              	.LVL32:
+ 380              	.L38:
+  46:./test/kved_test.c **** 
+ 381              		.loc 1 46 2 discriminator 1 view .LVU117
+ 382 031d 488D0D00 		leaq	__PRETTY_FUNCTION__.0(%rip), %rcx
+ 382      000000
+ 383 0324 BA2E0000 		movl	$46, %edx
+ 383      00
+ 384 0329 488D3500 		leaq	.LC0(%rip), %rsi
+ 384      000000
+ 385 0330 488D3D00 		leaq	.LC3(%rip), %rdi
+ 385      000000
+ 386 0337 E8000000 		call	__assert_fail@PLT
+GAS LISTING /tmp/cchhzlxh.s 			page 13
+
+
+ 386      00
+ 387              	.LVL33:
+ 388              	.L39:
+  54:./test/kved_test.c **** 
+ 389              		.loc 1 54 2 discriminator 1 view .LVU118
+ 390 033c 488D0D00 		leaq	__PRETTY_FUNCTION__.0(%rip), %rcx
+ 390      000000
+ 391 0343 BA360000 		movl	$54, %edx
+ 391      00
+ 392 0348 488D3500 		leaq	.LC0(%rip), %rsi
+ 392      000000
+ 393 034f 488D3D00 		leaq	.LC4(%rip), %rdi
+ 393      000000
+ 394 0356 E8000000 		call	__assert_fail@PLT
+ 394      00
+ 395              	.LVL34:
+ 396              	.L40:
+  62:./test/kved_test.c **** 
+ 397              		.loc 1 62 2 discriminator 1 view .LVU119
+ 398 035b 488D0D00 		leaq	__PRETTY_FUNCTION__.0(%rip), %rcx
+ 398      000000
+ 399 0362 BA3E0000 		movl	$62, %edx
+ 399      00
+ 400 0367 488D3500 		leaq	.LC0(%rip), %rsi
+ 400      000000
+ 401 036e 488D3D00 		leaq	.LC5(%rip), %rdi
+ 401      000000
+ 402 0375 E8000000 		call	__assert_fail@PLT
+ 402      00
+ 403              	.LVL35:
+ 404              	.L41:
+  70:./test/kved_test.c **** 
+ 405              		.loc 1 70 2 discriminator 1 view .LVU120
+ 406 037a 488D0D00 		leaq	__PRETTY_FUNCTION__.0(%rip), %rcx
+ 406      000000
+ 407 0381 BA460000 		movl	$70, %edx
+ 407      00
+ 408 0386 488D3500 		leaq	.LC0(%rip), %rsi
+ 408      000000
+ 409 038d 488D3D00 		leaq	.LC6(%rip), %rdi
+ 409      000000
+ 410 0394 E8000000 		call	__assert_fail@PLT
+ 410      00
+ 411              	.LVL36:
+ 412              	.L33:
+  78:./test/kved_test.c **** 
+ 413              		.loc 1 78 2 discriminator 1 view .LVU121
+ 414 0399 488D0D00 		leaq	__PRETTY_FUNCTION__.0(%rip), %rcx
+ 414      000000
+ 415 03a0 BA4E0000 		movl	$78, %edx
+ 415      00
+ 416 03a5 488D3500 		leaq	.LC0(%rip), %rsi
+ 416      000000
+ 417 03ac 488D3D00 		leaq	.LC8(%rip), %rdi
+ 417      000000
+ 418 03b3 E8000000 		call	__assert_fail@PLT
+ 418      00
+GAS LISTING /tmp/cchhzlxh.s 			page 14
+
+
+ 419              	.LVL37:
+ 420              	.L42:
+  88:./test/kved_test.c **** 	assert(v.str[1] == d.value.str[1]);
+ 421              		.loc 1 88 2 discriminator 1 view .LVU122
+ 422 03b8 488D0D00 		leaq	__PRETTY_FUNCTION__.0(%rip), %rcx
+ 422      000000
+ 423 03bf BA580000 		movl	$88, %edx
+ 423      00
+ 424 03c4 488D3500 		leaq	.LC0(%rip), %rsi
+ 424      000000
+ 425 03cb 488D3D00 		leaq	.LC9(%rip), %rdi
+ 425      000000
+ 426 03d2 E8000000 		call	__assert_fail@PLT
+ 426      00
+ 427              	.LVL38:
+ 428              	.L43:
+  89:./test/kved_test.c **** 	assert(v.str[2] == d.value.str[2]);
+ 429              		.loc 1 89 2 discriminator 1 view .LVU123
+ 430 03d7 488D0D00 		leaq	__PRETTY_FUNCTION__.0(%rip), %rcx
+ 430      000000
+ 431 03de BA590000 		movl	$89, %edx
+ 431      00
+ 432 03e3 488D3500 		leaq	.LC0(%rip), %rsi
+ 432      000000
+ 433 03ea 488D3D00 		leaq	.LC10(%rip), %rdi
+ 433      000000
+ 434 03f1 E8000000 		call	__assert_fail@PLT
+ 434      00
+ 435              	.LVL39:
+ 436              	.L44:
+  90:./test/kved_test.c **** 	assert(v.str[3] == d.value.str[3]);
+ 437              		.loc 1 90 2 discriminator 1 view .LVU124
+ 438 03f6 488D0D00 		leaq	__PRETTY_FUNCTION__.0(%rip), %rcx
+ 438      000000
+ 439 03fd BA5A0000 		movl	$90, %edx
+ 439      00
+ 440 0402 488D3500 		leaq	.LC0(%rip), %rsi
+ 440      000000
+ 441 0409 488D3D00 		leaq	.LC11(%rip), %rdi
+ 441      000000
+ 442 0410 E8000000 		call	__assert_fail@PLT
+ 442      00
+ 443              	.LVL40:
+ 444              	.L45:
+  91:./test/kved_test.c **** 
+ 445              		.loc 1 91 2 discriminator 1 view .LVU125
+ 446 0415 488D0D00 		leaq	__PRETTY_FUNCTION__.0(%rip), %rcx
+ 446      000000
+ 447 041c BA5B0000 		movl	$91, %edx
+ 447      00
+ 448 0421 488D3500 		leaq	.LC0(%rip), %rsi
+ 448      000000
+ 449 0428 488D3D00 		leaq	.LC12(%rip), %rdi
+ 449      000000
+ 450 042f E8000000 		call	__assert_fail@PLT
+ 450      00
+ 451              	.LVL41:
+GAS LISTING /tmp/cchhzlxh.s 			page 15
+
+
+ 452              	.L47:
+ 453              	.LBB3:
+ 454              		.loc 1 101 3 discriminator 1 view .LVU126
+ 455 0434 488D0D00 		leaq	__PRETTY_FUNCTION__.0(%rip), %rcx
+ 455      000000
+ 456 043b BA650000 		movl	$101, %edx
+ 456      00
+ 457 0440 488D3500 		leaq	.LC0(%rip), %rsi
+ 457      000000
+ 458 0447 488D3D00 		leaq	.LC5(%rip), %rdi
+ 458      000000
+ 459 044e E8000000 		call	__assert_fail@PLT
+ 459      00
+ 460              	.LVL42:
+ 461              	.L46:
+ 462              	.LBE3:
+ 102:./test/kved_test.c **** 	}
+ 103:./test/kved_test.c **** 
+ 104:./test/kved_test.c **** 	// Forcing roll over (sector b)
+ 105:./test/kved_test.c **** 	d.type = KVED_DATA_TYPE_UINT32;
+ 463              		.loc 1 105 2 view .LVU127
+ 464              		.loc 1 105 9 is_stmt 0 view .LVU128
+ 465 0453 C7442420 		movl	$4, 32(%rsp)
+ 465      04000000 
+ 106:./test/kved_test.c **** 	for(size_t n = 0 ; n < (kved_flash_sector_size()/(2*sizeof(kved_word_t))) ; n++)
+ 466              		.loc 1 106 2 is_stmt 1 view .LVU129
+ 467              	.LBB4:
+ 468              		.loc 1 106 6 view .LVU130
+ 469              	.LVL43:
+ 470              		.loc 1 106 13 is_stmt 0 view .LVU131
+ 471 045b BD000000 		movl	$0, %ebp
+ 471      00
+ 472              	.LVL44:
+ 473              	.L17:
+ 474              		.loc 1 106 23 is_stmt 1 discriminator 1 view .LVU132
+ 475              		.loc 1 106 26 is_stmt 0 discriminator 1 view .LVU133
+ 476 0460 E8000000 		call	kved_flash_sector_size@PLT
+ 476      00
+ 477              	.LVL45:
+ 478              		.loc 1 106 50 discriminator 1 view .LVU134
+ 479 0465 C1E804   		shrl	$4, %eax
+ 480 0468 89C0     		movl	%eax, %eax
+ 481              		.loc 1 106 23 discriminator 1 view .LVU135
+ 482 046a 4839E8   		cmpq	%rbp, %rax
+ 483 046d 766E     		jbe	.L48
+ 107:./test/kved_test.c **** 	{
+ 108:./test/kved_test.c **** 		d.value.u32 = (n << 24) | (n << 16) | (n << 8) |n;
+ 484              		.loc 1 108 3 is_stmt 1 view .LVU136
+ 485              		.loc 1 108 20 is_stmt 0 view .LVU137
+ 486 046f 89EB     		movl	%ebp, %ebx
+ 487 0471 C1E318   		sall	$24, %ebx
+ 488              		.loc 1 108 32 view .LVU138
+ 489 0474 89E8     		movl	%ebp, %eax
+ 490 0476 C1E010   		sall	$16, %eax
+ 491              		.loc 1 108 27 view .LVU139
+ 492 0479 09C3     		orl	%eax, %ebx
+ 493              		.loc 1 108 44 view .LVU140
+GAS LISTING /tmp/cchhzlxh.s 			page 16
+
+
+ 494 047b 89E8     		movl	%ebp, %eax
+ 495 047d C1E008   		sall	$8, %eax
+ 496              		.loc 1 108 39 view .LVU141
+ 497 0480 09C3     		orl	%eax, %ebx
+ 498              		.loc 1 108 50 view .LVU142
+ 499 0482 09EB     		orl	%ebp, %ebx
+ 500              		.loc 1 108 15 view .LVU143
+ 501 0484 895C2410 		movl	%ebx, 16(%rsp)
+ 109:./test/kved_test.c **** 		v.u32 = d.value.u32;
+ 502              		.loc 1 109 3 is_stmt 1 view .LVU144
+ 503              		.loc 1 109 9 is_stmt 0 view .LVU145
+ 504 0488 89DA     		movl	%ebx, %edx
+ 505 048a 48B80000 		movabsq	$-4294967296, %rax
+ 505      0000FFFF 
+ 505      FFFF
+ 506              	.LVL46:
+ 507              		.loc 1 109 9 view .LVU146
+ 508 0494 4C21E0   		andq	%r12, %rax
+ 509 0497 4809D0   		orq	%rdx, %rax
+ 510 049a 4989C4   		movq	%rax, %r12
+ 511              	.LVL47:
+ 110:./test/kved_test.c **** 		kved_data_write(&d);
+ 512              		.loc 1 110 3 is_stmt 1 view .LVU147
+ 513 049d 4C8D6C24 		leaq	16(%rsp), %r13
+ 513      10
+ 514 04a2 4C89EF   		movq	%r13, %rdi
+ 515 04a5 E8000000 		call	kved_data_write@PLT
+ 515      00
+ 516              	.LVL48:
+ 111:./test/kved_test.c **** 		kved_data_read(&d);
+ 517              		.loc 1 111 3 view .LVU148
+ 518 04aa 4C89EF   		movq	%r13, %rdi
+ 519 04ad E8000000 		call	kved_data_read@PLT
+ 519      00
+ 520              	.LVL49:
+ 112:./test/kved_test.c **** 		assert(v.u32 == d.value.u32);
+ 521              		.loc 1 112 3 view .LVU149
+ 522 04b2 3B5C2410 		cmpl	16(%rsp), %ebx
+ 523 04b6 7506     		jne	.L49
+ 106:./test/kved_test.c **** 	{
+ 524              		.loc 1 106 79 discriminator 2 view .LVU150
+ 525 04b8 4883C501 		addq	$1, %rbp
+ 526              	.LVL50:
+ 106:./test/kved_test.c **** 	{
+ 527              		.loc 1 106 79 is_stmt 0 discriminator 2 view .LVU151
+ 528 04bc EBA2     		jmp	.L17
+ 529              	.L49:
+ 530              		.loc 1 112 3 is_stmt 1 discriminator 1 view .LVU152
+ 531 04be 488D0D00 		leaq	__PRETTY_FUNCTION__.0(%rip), %rcx
+ 531      000000
+ 532 04c5 BA700000 		movl	$112, %edx
+ 532      00
+ 533 04ca 488D3500 		leaq	.LC0(%rip), %rsi
+ 533      000000
+ 534 04d1 488D3D00 		leaq	.LC5(%rip), %rdi
+ 534      000000
+ 535 04d8 E8000000 		call	__assert_fail@PLT
+GAS LISTING /tmp/cchhzlxh.s 			page 17
+
+
+ 535      00
+ 536              	.LVL51:
+ 537              	.L48:
+ 538              	.LBE4:
+ 113:./test/kved_test.c **** 	}
+ 114:./test/kved_test.c **** 
+ 115:./test/kved_test.c **** #if KVED_FLASH_WORD_SIZE == 8
+ 116:./test/kved_test.c **** 	// U64
+ 117:./test/kved_test.c **** 	d.type = KVED_DATA_TYPE_UINT64;
+ 539              		.loc 1 117 2 view .LVU153
+ 540              		.loc 1 117 9 is_stmt 0 view .LVU154
+ 541 04dd C7442420 		movl	$8, 32(%rsp)
+ 541      08000000 
+ 118:./test/kved_test.c **** 	d.value.u64 = UINT64_MAX;
+ 542              		.loc 1 118 2 is_stmt 1 view .LVU155
+ 543              		.loc 1 118 14 is_stmt 0 view .LVU156
+ 544 04e5 48C74424 		movq	$-1, 16(%rsp)
+ 544      10FFFFFF 
+ 544      FF
+ 119:./test/kved_test.c **** 	v.u64 = d.value.u64;
+ 545              		.loc 1 119 2 is_stmt 1 view .LVU157
+ 120:./test/kved_test.c **** 	kved_data_write(&d);
+ 546              		.loc 1 120 2 view .LVU158
+ 547 04ee 488D5C24 		leaq	16(%rsp), %rbx
+ 547      10
+ 548 04f3 4889DF   		movq	%rbx, %rdi
+ 549 04f6 E8000000 		call	kved_data_write@PLT
+ 549      00
+ 550              	.LVL52:
+ 121:./test/kved_test.c **** 	kved_data_read(&d);
+ 551              		.loc 1 121 2 view .LVU159
+ 552 04fb 4889DF   		movq	%rbx, %rdi
+ 553 04fe E8000000 		call	kved_data_read@PLT
+ 553      00
+ 554              	.LVL53:
+ 122:./test/kved_test.c **** 	assert(v.u64 == d.value.u64);
+ 555              		.loc 1 122 2 view .LVU160
+ 556 0503 48837C24 		cmpq	$-1, 16(%rsp)
+ 556      10FF
+ 557 0509 0F857901 		jne	.L50
+ 557      0000
+ 123:./test/kved_test.c **** 
+ 124:./test/kved_test.c **** 	// I64
+ 125:./test/kved_test.c **** 	d.type = KVED_DATA_TYPE_INT64;
+ 558              		.loc 1 125 2 view .LVU161
+ 559              		.loc 1 125 9 is_stmt 0 view .LVU162
+ 560 050f C7442420 		movl	$9, 32(%rsp)
+ 560      09000000 
+ 126:./test/kved_test.c **** 	d.value.i64 = INT64_MIN;
+ 561              		.loc 1 126 2 is_stmt 1 view .LVU163
+ 562              		.loc 1 126 14 is_stmt 0 view .LVU164
+ 563 0517 48BB0000 		movabsq	$-9223372036854775808, %rbx
+ 563      00000000 
+ 563      0080
+ 564 0521 48895C24 		movq	%rbx, 16(%rsp)
+ 564      10
+ 127:./test/kved_test.c **** 	v.i64 = d.value.i64;
+GAS LISTING /tmp/cchhzlxh.s 			page 18
+
+
+ 565              		.loc 1 127 2 is_stmt 1 view .LVU165
+ 128:./test/kved_test.c **** 	kved_data_write(&d);
+ 566              		.loc 1 128 2 view .LVU166
+ 567 0526 488D6C24 		leaq	16(%rsp), %rbp
+ 567      10
+ 568              	.LVL54:
+ 569              		.loc 1 128 2 is_stmt 0 view .LVU167
+ 570 052b 4889EF   		movq	%rbp, %rdi
+ 571 052e E8000000 		call	kved_data_write@PLT
+ 571      00
+ 572              	.LVL55:
+ 129:./test/kved_test.c **** 	kved_data_read(&d);
+ 573              		.loc 1 129 2 is_stmt 1 view .LVU168
+ 574 0533 4889EF   		movq	%rbp, %rdi
+ 575 0536 E8000000 		call	kved_data_read@PLT
+ 575      00
+ 576              	.LVL56:
+ 130:./test/kved_test.c **** 	assert(v.i64 == d.value.i64);
+ 577              		.loc 1 130 2 view .LVU169
+ 578 053b 48395C24 		cmpq	%rbx, 16(%rsp)
+ 578      10
+ 579 0540 0F856101 		jne	.L51
+ 579      0000
+ 131:./test/kved_test.c **** 
+ 132:./test/kved_test.c **** 	// DOUBLE
+ 133:./test/kved_test.c **** 	d.type = KVED_DATA_TYPE_DOUBLE;
+ 580              		.loc 1 133 2 view .LVU170
+ 581              		.loc 1 133 9 is_stmt 0 view .LVU171
+ 582 0546 C7442420 		movl	$10, 32(%rsp)
+ 582      0A000000 
+ 134:./test/kved_test.c **** 	d.value.dbl = 3.141592;
+ 583              		.loc 1 134 2 is_stmt 1 view .LVU172
+ 584              		.loc 1 134 14 is_stmt 0 view .LVU173
+ 585 054e 488B0500 		movq	.LC15(%rip), %rax
+ 585      000000
+ 586 0555 48894424 		movq	%rax, 16(%rsp)
+ 586      10
+ 135:./test/kved_test.c **** 	v.dbl = d.value.dbl;
+ 587              		.loc 1 135 2 is_stmt 1 view .LVU174
+ 136:./test/kved_test.c **** 	kved_data_write(&d);
+ 588              		.loc 1 136 2 view .LVU175
+ 589 055a 488D5C24 		leaq	16(%rsp), %rbx
+ 589      10
+ 590 055f 4889DF   		movq	%rbx, %rdi
+ 591 0562 E8000000 		call	kved_data_write@PLT
+ 591      00
+ 592              	.LVL57:
+ 137:./test/kved_test.c **** 	kved_data_read(&d);
+ 593              		.loc 1 137 2 view .LVU176
+ 594 0567 4889DF   		movq	%rbx, %rdi
+ 595 056a E8000000 		call	kved_data_read@PLT
+ 595      00
+ 596              	.LVL58:
+ 138:./test/kved_test.c **** 	assert(v.dbl == d.value.dbl);
+ 597              		.loc 1 138 2 view .LVU177
+ 598 056f F20F1044 		movsd	16(%rsp), %xmm0
+ 598      2410
+GAS LISTING /tmp/cchhzlxh.s 			page 19
+
+
+ 599 0575 660F2E05 		ucomisd	.LC15(%rip), %xmm0
+ 599      00000000 
+ 600 057d 0F8A4301 		jp	.L34
+ 600      0000
+ 601 0583 0F853D01 		jne	.L34
+ 601      0000
+ 139:./test/kved_test.c **** 
+ 140:./test/kved_test.c **** 	kved_data_t long_key = {
+ 602              		.loc 1 140 2 view .LVU178
+ 603              		.loc 1 140 14 is_stmt 0 view .LVU179
+ 604 0589 48B84B56 		movabsq	$22605221461317195, %rax
+ 604      4543544F 
+ 604      5000
+ 605 0593 48894424 		movq	%rax, 48(%rsp)
+ 605      30
+ 606 0598 C7442438 		movl	$1768710499, 56(%rsp)
+ 606      63616C69 
+ 607 05a0 66C74424 		movw	$13154, 60(%rsp)
+ 607      3C6233
+ 608 05a7 C644243E 		movb	$0, 62(%rsp)
+ 608      00
+ 609 05ac C7442440 		movl	$7, 64(%rsp)
+ 609      07000000 
+ 141:./test/kved_test.c **** 		.type = KVED_DATA_TYPE_STRING,
+ 142:./test/kved_test.c **** 		.key = "calib3",
+ 143:./test/kved_test.c **** 		.value.str ="KVECTOP"
+ 144:./test/kved_test.c **** 	};
+ 145:./test/kved_test.c **** 
+ 146:./test/kved_test.c **** 	v.str[0] = d.value.str[0]; 
+ 610              		.loc 1 146 2 is_stmt 1 view .LVU180
+ 611              		.loc 1 146 24 is_stmt 0 view .LVU181
+ 612 05b4 440FB67C 		movzbl	16(%rsp), %r15d
+ 612      2410
+ 147:./test/kved_test.c **** 	v.str[1] = d.value.str[1]; 
+ 613              		.loc 1 147 2 is_stmt 1 view .LVU182
+ 614              		.loc 1 147 24 is_stmt 0 view .LVU183
+ 615 05ba 440FB674 		movzbl	17(%rsp), %r14d
+ 615      2411
+ 148:./test/kved_test.c **** 	v.str[2] = d.value.str[2];
+ 616              		.loc 1 148 2 is_stmt 1 view .LVU184
+ 617              		.loc 1 148 24 is_stmt 0 view .LVU185
+ 618 05c0 440FB66C 		movzbl	18(%rsp), %r13d
+ 618      2412
+ 149:./test/kved_test.c **** 	v.str[3] = d.value.str[3];
+ 619              		.loc 1 149 2 is_stmt 1 view .LVU186
+ 620              		.loc 1 149 24 is_stmt 0 view .LVU187
+ 621 05c6 440FB664 		movzbl	19(%rsp), %r12d
+ 621      2413
+ 150:./test/kved_test.c **** 	v.str[4] = d.value.str[4]; 
+ 622              		.loc 1 150 2 is_stmt 1 view .LVU188
+ 623              		.loc 1 150 24 is_stmt 0 view .LVU189
+ 624 05cc 0FB66C24 		movzbl	20(%rsp), %ebp
+ 624      14
+ 151:./test/kved_test.c **** 	v.str[5] = d.value.str[5]; 
+ 625              		.loc 1 151 2 is_stmt 1 view .LVU190
+ 626              		.loc 1 151 24 is_stmt 0 view .LVU191
+ 627 05d1 0FB64424 		movzbl	21(%rsp), %eax
+GAS LISTING /tmp/cchhzlxh.s 			page 20
+
+
+ 627      15
+ 628 05d6 8844240D 		movb	%al, 13(%rsp)
+ 152:./test/kved_test.c **** 	v.str[6] = d.value.str[6];
+ 629              		.loc 1 152 2 is_stmt 1 view .LVU192
+ 630              		.loc 1 152 24 is_stmt 0 view .LVU193
+ 631 05da 0FB64424 		movzbl	22(%rsp), %eax
+ 631      16
+ 632 05df 8844240E 		movb	%al, 14(%rsp)
+ 153:./test/kved_test.c **** 	v.str[7] = d.value.str[7];
+ 633              		.loc 1 153 2 is_stmt 1 view .LVU194
+ 634              		.loc 1 153 24 is_stmt 0 view .LVU195
+ 635 05e3 0FB64424 		movzbl	23(%rsp), %eax
+ 635      17
+ 636 05e8 8844240F 		movb	%al, 15(%rsp)
+ 154:./test/kved_test.c **** 
+ 155:./test/kved_test.c **** 	kved_data_write(&long_key);
+ 637              		.loc 1 155 2 is_stmt 1 view .LVU196
+ 638 05ec 488D5C24 		leaq	48(%rsp), %rbx
+ 638      30
+ 639 05f1 4889DF   		movq	%rbx, %rdi
+ 640 05f4 E8000000 		call	kved_data_write@PLT
+ 640      00
+ 641              	.LVL59:
+ 156:./test/kved_test.c **** 	kved_data_read(&long_key);
+ 642              		.loc 1 156 2 view .LVU197
+ 643 05f9 4889DF   		movq	%rbx, %rdi
+ 644 05fc E8000000 		call	kved_data_read@PLT
+ 644      00
+ 645              	.LVL60:
+ 157:./test/kved_test.c **** 	assert(v.str[0] == d.value.str[0]);
+ 646              		.loc 1 157 2 view .LVU198
+ 647 0601 443A7C24 		cmpb	16(%rsp), %r15b
+ 647      10
+ 648 0606 0F85D900 		jne	.L52
+ 648      0000
+ 158:./test/kved_test.c **** 	assert(v.str[1] == d.value.str[1]);
+ 649              		.loc 1 158 2 view .LVU199
+ 650 060c 443A7424 		cmpb	17(%rsp), %r14b
+ 650      11
+ 651 0611 0F85ED00 		jne	.L53
+ 651      0000
+ 159:./test/kved_test.c **** 	assert(v.str[2] == d.value.str[2]);
+ 652              		.loc 1 159 2 view .LVU200
+ 653 0617 443A6C24 		cmpb	18(%rsp), %r13b
+ 653      12
+ 654 061c 0F850101 		jne	.L54
+ 654      0000
+ 160:./test/kved_test.c **** 	assert(v.str[3] == d.value.str[3]);
+ 655              		.loc 1 160 2 view .LVU201
+ 656 0622 443A6424 		cmpb	19(%rsp), %r12b
+ 656      13
+ 657 0627 0F851501 		jne	.L55
+ 657      0000
+ 161:./test/kved_test.c **** 	assert(v.str[4] == d.value.str[4]);
+ 658              		.loc 1 161 2 view .LVU202
+ 659 062d 403A6C24 		cmpb	20(%rsp), %bpl
+ 659      14
+GAS LISTING /tmp/cchhzlxh.s 			page 21
+
+
+ 660 0632 0F852901 		jne	.L56
+ 660      0000
+ 162:./test/kved_test.c **** 	assert(v.str[5] == d.value.str[5]);
+ 661              		.loc 1 162 2 view .LVU203
+ 662 0638 0FB64424 		movzbl	13(%rsp), %eax
+ 662      0D
+ 663 063d 3A442415 		cmpb	21(%rsp), %al
+ 664 0641 0F853901 		jne	.L57
+ 664      0000
+ 163:./test/kved_test.c **** 	assert(v.str[6] == d.value.str[6]);
+ 665              		.loc 1 163 2 view .LVU204
+ 666 0647 0FB64424 		movzbl	14(%rsp), %eax
+ 666      0E
+ 667 064c 3A442416 		cmpb	22(%rsp), %al
+ 668 0650 0F854901 		jne	.L58
+ 668      0000
+ 164:./test/kved_test.c **** 	assert(v.str[7] == d.value.str[7]);
+ 669              		.loc 1 164 2 view .LVU205
+ 670 0656 0FB64424 		movzbl	15(%rsp), %eax
+ 670      0F
+ 671 065b 3A442417 		cmpb	23(%rsp), %al
+ 672 065f 0F855901 		jne	.L59
+ 672      0000
+ 165:./test/kved_test.c **** 
+ 166:./test/kved_test.c **** #endif
+ 167:./test/kved_test.c **** }
+ 673              		.loc 1 167 1 is_stmt 0 view .LVU206
+ 674 0665 488B4424 		movq	72(%rsp), %rax
+ 674      48
+ 675 066a 64482B04 		subq	%fs:40, %rax
+ 675      25280000 
+ 675      00
+ 676 0673 0F856401 		jne	.L60
+ 676      0000
+ 677 0679 4883C458 		addq	$88, %rsp
+ 678              		.cfi_remember_state
+ 679              		.cfi_def_cfa_offset 56
+ 680 067d 5B       		popq	%rbx
+ 681              		.cfi_def_cfa_offset 48
+ 682 067e 5D       		popq	%rbp
+ 683              		.cfi_def_cfa_offset 40
+ 684 067f 415C     		popq	%r12
+ 685              		.cfi_def_cfa_offset 32
+ 686 0681 415D     		popq	%r13
+ 687              		.cfi_def_cfa_offset 24
+ 688 0683 415E     		popq	%r14
+ 689              		.cfi_def_cfa_offset 16
+ 690 0685 415F     		popq	%r15
+ 691              		.cfi_def_cfa_offset 8
+ 692 0687 C3       		ret
+ 693              	.LVL61:
+ 694              	.L50:
+ 695              		.cfi_restore_state
+ 122:./test/kved_test.c **** 
+ 696              		.loc 1 122 2 is_stmt 1 discriminator 1 view .LVU207
+ 697 0688 488D0D00 		leaq	__PRETTY_FUNCTION__.0(%rip), %rcx
+ 697      000000
+GAS LISTING /tmp/cchhzlxh.s 			page 22
+
+
+ 698 068f BA7A0000 		movl	$122, %edx
+ 698      00
+ 699 0694 488D3500 		leaq	.LC0(%rip), %rsi
+ 699      000000
+ 700 069b 488D3D00 		leaq	.LC13(%rip), %rdi
+ 700      000000
+ 701 06a2 E8000000 		call	__assert_fail@PLT
+ 701      00
+ 702              	.LVL62:
+ 703              	.L51:
+ 130:./test/kved_test.c **** 
+ 704              		.loc 1 130 2 discriminator 1 view .LVU208
+ 705 06a7 488D0D00 		leaq	__PRETTY_FUNCTION__.0(%rip), %rcx
+ 705      000000
+ 706 06ae BA820000 		movl	$130, %edx
+ 706      00
+ 707 06b3 488D3500 		leaq	.LC0(%rip), %rsi
+ 707      000000
+ 708 06ba 488D3D00 		leaq	.LC14(%rip), %rdi
+ 708      000000
+ 709 06c1 E8000000 		call	__assert_fail@PLT
+ 709      00
+ 710              	.LVL63:
+ 711              	.L34:
+ 138:./test/kved_test.c **** 
+ 712              		.loc 1 138 2 discriminator 1 view .LVU209
+ 713 06c6 488D0D00 		leaq	__PRETTY_FUNCTION__.0(%rip), %rcx
+ 713      000000
+ 714 06cd BA8A0000 		movl	$138, %edx
+ 714      00
+ 715 06d2 488D3500 		leaq	.LC0(%rip), %rsi
+ 715      000000
+ 716 06d9 488D3D00 		leaq	.LC16(%rip), %rdi
+ 716      000000
+ 717 06e0 E8000000 		call	__assert_fail@PLT
+ 717      00
+ 718              	.LVL64:
+ 719              	.L52:
+ 157:./test/kved_test.c **** 	assert(v.str[1] == d.value.str[1]);
+ 720              		.loc 1 157 2 discriminator 1 view .LVU210
+ 721 06e5 488D0D00 		leaq	__PRETTY_FUNCTION__.0(%rip), %rcx
+ 721      000000
+ 722 06ec BA9D0000 		movl	$157, %edx
+ 722      00
+ 723 06f1 488D3500 		leaq	.LC0(%rip), %rsi
+ 723      000000
+ 724 06f8 488D3D00 		leaq	.LC9(%rip), %rdi
+ 724      000000
+ 725 06ff E8000000 		call	__assert_fail@PLT
+ 725      00
+ 726              	.LVL65:
+ 727              	.L53:
+ 158:./test/kved_test.c **** 	assert(v.str[2] == d.value.str[2]);
+ 728              		.loc 1 158 2 discriminator 1 view .LVU211
+ 729 0704 488D0D00 		leaq	__PRETTY_FUNCTION__.0(%rip), %rcx
+ 729      000000
+ 730 070b BA9E0000 		movl	$158, %edx
+GAS LISTING /tmp/cchhzlxh.s 			page 23
+
+
+ 730      00
+ 731 0710 488D3500 		leaq	.LC0(%rip), %rsi
+ 731      000000
+ 732 0717 488D3D00 		leaq	.LC10(%rip), %rdi
+ 732      000000
+ 733 071e E8000000 		call	__assert_fail@PLT
+ 733      00
+ 734              	.LVL66:
+ 735              	.L54:
+ 159:./test/kved_test.c **** 	assert(v.str[3] == d.value.str[3]);
+ 736              		.loc 1 159 2 discriminator 1 view .LVU212
+ 737 0723 488D0D00 		leaq	__PRETTY_FUNCTION__.0(%rip), %rcx
+ 737      000000
+ 738 072a BA9F0000 		movl	$159, %edx
+ 738      00
+ 739 072f 488D3500 		leaq	.LC0(%rip), %rsi
+ 739      000000
+ 740 0736 488D3D00 		leaq	.LC11(%rip), %rdi
+ 740      000000
+ 741 073d E8000000 		call	__assert_fail@PLT
+ 741      00
+ 742              	.LVL67:
+ 743              	.L55:
+ 160:./test/kved_test.c **** 	assert(v.str[4] == d.value.str[4]);
+ 744              		.loc 1 160 2 discriminator 1 view .LVU213
+ 745 0742 488D0D00 		leaq	__PRETTY_FUNCTION__.0(%rip), %rcx
+ 745      000000
+ 746 0749 BAA00000 		movl	$160, %edx
+ 746      00
+ 747 074e 488D3500 		leaq	.LC0(%rip), %rsi
+ 747      000000
+ 748 0755 488D3D00 		leaq	.LC12(%rip), %rdi
+ 748      000000
+ 749 075c E8000000 		call	__assert_fail@PLT
+ 749      00
+ 750              	.LVL68:
+ 751              	.L56:
+ 161:./test/kved_test.c **** 	assert(v.str[5] == d.value.str[5]);
+ 752              		.loc 1 161 2 discriminator 1 view .LVU214
+ 753 0761 488D0D00 		leaq	__PRETTY_FUNCTION__.0(%rip), %rcx
+ 753      000000
+ 754 0768 BAA10000 		movl	$161, %edx
+ 754      00
+ 755 076d 488D3500 		leaq	.LC0(%rip), %rsi
+ 755      000000
+ 756 0774 488D3D00 		leaq	.LC17(%rip), %rdi
+ 756      000000
+ 757 077b E8000000 		call	__assert_fail@PLT
+ 757      00
+ 758              	.LVL69:
+ 759              	.L57:
+ 162:./test/kved_test.c **** 	assert(v.str[6] == d.value.str[6]);
+ 760              		.loc 1 162 2 discriminator 1 view .LVU215
+ 761 0780 488D0D00 		leaq	__PRETTY_FUNCTION__.0(%rip), %rcx
+ 761      000000
+ 762 0787 BAA20000 		movl	$162, %edx
+ 762      00
+GAS LISTING /tmp/cchhzlxh.s 			page 24
+
+
+ 763 078c 488D3500 		leaq	.LC0(%rip), %rsi
+ 763      000000
+ 764 0793 488D3D00 		leaq	.LC18(%rip), %rdi
+ 764      000000
+ 765 079a E8000000 		call	__assert_fail@PLT
+ 765      00
+ 766              	.LVL70:
+ 767              	.L58:
+ 163:./test/kved_test.c **** 	assert(v.str[7] == d.value.str[7]);
+ 768              		.loc 1 163 2 discriminator 1 view .LVU216
+ 769 079f 488D0D00 		leaq	__PRETTY_FUNCTION__.0(%rip), %rcx
+ 769      000000
+ 770 07a6 BAA30000 		movl	$163, %edx
+ 770      00
+ 771 07ab 488D3500 		leaq	.LC0(%rip), %rsi
+ 771      000000
+ 772 07b2 488D3D00 		leaq	.LC19(%rip), %rdi
+ 772      000000
+ 773 07b9 E8000000 		call	__assert_fail@PLT
+ 773      00
+ 774              	.LVL71:
+ 775              	.L59:
+ 164:./test/kved_test.c **** 
+ 776              		.loc 1 164 2 discriminator 1 view .LVU217
+ 777 07be 488D0D00 		leaq	__PRETTY_FUNCTION__.0(%rip), %rcx
+ 777      000000
+ 778 07c5 BAA40000 		movl	$164, %edx
+ 778      00
+ 779 07ca 488D3500 		leaq	.LC0(%rip), %rsi
+ 779      000000
+ 780 07d1 488D3D00 		leaq	.LC20(%rip), %rdi
+ 780      000000
+ 781 07d8 E8000000 		call	__assert_fail@PLT
+ 781      00
+ 782              	.LVL72:
+ 783              	.L60:
+ 784              		.loc 1 167 1 is_stmt 0 view .LVU218
+ 785 07dd E8000000 		call	__stack_chk_fail@PLT
+ 785      00
+ 786              	.LVL73:
+ 787              		.cfi_endproc
+ 788              	.LFE35:
+ 790              		.section	.text.kved_header_test,"ax",@progbits
+ 791              		.globl	kved_header_test
+ 793              	kved_header_test:
+ 794              	.LFB36:
+ 168:./test/kved_test.c **** 
+ 169:./test/kved_test.c **** void kved_header_test(void)
+ 170:./test/kved_test.c **** {
+ 795              		.loc 1 170 1 is_stmt 1 view -0
+ 796              		.cfi_startproc
+ 797 0000 F30F1EFA 		endbr64
+ 798 0004 53       		pushq	%rbx
+ 799              		.cfi_def_cfa_offset 16
+ 800              		.cfi_offset 3, -16
+ 171:./test/kved_test.c **** 	kved_init();
+ 801              		.loc 1 171 2 view .LVU220
+GAS LISTING /tmp/cchhzlxh.s 			page 25
+
+
+ 802 0005 E8000000 		call	kved_init@PLT
+ 802      00
+ 803              	.LVL74:
+ 172:./test/kved_test.c ****     kved_dump();
+ 804              		.loc 1 172 5 view .LVU221
+ 805 000a E8000000 		call	kved_dump@PLT
+ 805      00
+ 806              	.LVL75:
+ 173:./test/kved_test.c **** 
+ 174:./test/kved_test.c ****     // test sector selection by newer counter
+ 175:./test/kved_test.c **** 	kved_flash_sector_erase(KVED_FLASH_SECTOR_A);
+ 807              		.loc 1 175 2 view .LVU222
+ 808 000f BF000000 		movl	$0, %edi
+ 808      00
+ 809 0014 E8000000 		call	kved_flash_sector_erase@PLT
+ 809      00
+ 810              	.LVL76:
+ 176:./test/kved_test.c ****     kved_flash_sector_erase(KVED_FLASH_SECTOR_B);
+ 811              		.loc 1 176 5 view .LVU223
+ 812 0019 BF010000 		movl	$1, %edi
+ 812      00
+ 813 001e E8000000 		call	kved_flash_sector_erase@PLT
+ 813      00
+ 814              	.LVL77:
+ 177:./test/kved_test.c **** 	kved_flash_data_write(KVED_FLASH_SECTOR_A,0,KVED_SIGNATURE_ENTRY);
+ 815              		.loc 1 177 2 view .LVU224
+ 816 0023 48BBEFBE 		movabsq	$-2401053088876216593, %rbx
+ 816      ADDEEFBE 
+ 816      ADDE
+ 817 002d 4889DA   		movq	%rbx, %rdx
+ 818 0030 BE000000 		movl	$0, %esi
+ 818      00
+ 819 0035 BF000000 		movl	$0, %edi
+ 819      00
+ 820 003a E8000000 		call	kved_flash_data_write@PLT
+ 820      00
+ 821              	.LVL78:
+ 178:./test/kved_test.c **** 	kved_flash_data_write(KVED_FLASH_SECTOR_A,1,10);
+ 822              		.loc 1 178 2 view .LVU225
+ 823 003f BA0A0000 		movl	$10, %edx
+ 823      00
+ 824 0044 BE010000 		movl	$1, %esi
+ 824      00
+ 825 0049 BF000000 		movl	$0, %edi
+ 825      00
+ 826 004e E8000000 		call	kved_flash_data_write@PLT
+ 826      00
+ 827              	.LVL79:
+ 179:./test/kved_test.c **** 	kved_flash_data_write(KVED_FLASH_SECTOR_B,0,KVED_SIGNATURE_ENTRY);
+ 828              		.loc 1 179 2 view .LVU226
+ 829 0053 4889DA   		movq	%rbx, %rdx
+ 830 0056 BE000000 		movl	$0, %esi
+ 830      00
+ 831 005b BF010000 		movl	$1, %edi
+ 831      00
+ 832 0060 E8000000 		call	kved_flash_data_write@PLT
+ 832      00
+GAS LISTING /tmp/cchhzlxh.s 			page 26
+
+
+ 833              	.LVL80:
+ 180:./test/kved_test.c **** 	kved_flash_data_write(KVED_FLASH_SECTOR_B,1,11);
+ 834              		.loc 1 180 2 view .LVU227
+ 835 0065 BA0B0000 		movl	$11, %edx
+ 835      00
+ 836 006a BE010000 		movl	$1, %esi
+ 836      00
+ 837 006f BF010000 		movl	$1, %edi
+ 837      00
+ 838 0074 E8000000 		call	kved_flash_data_write@PLT
+ 838      00
+ 839              	.LVL81:
+ 181:./test/kved_test.c **** 
+ 182:./test/kved_test.c **** 	kved_init();
+ 840              		.loc 1 182 2 view .LVU228
+ 841 0079 E8000000 		call	kved_init@PLT
+ 841      00
+ 842              	.LVL82:
+ 183:./test/kved_test.c ****     kved_dump();
+ 843              		.loc 1 183 5 view .LVU229
+ 844 007e E8000000 		call	kved_dump@PLT
+ 844      00
+ 845              	.LVL83:
+ 184:./test/kved_test.c **** 
+ 185:./test/kved_test.c ****     // test error condition when max counter is reached
+ 186:./test/kved_test.c **** 	kved_flash_sector_erase(KVED_FLASH_SECTOR_A);
+ 846              		.loc 1 186 2 view .LVU230
+ 847 0083 BF000000 		movl	$0, %edi
+ 847      00
+ 848 0088 E8000000 		call	kved_flash_sector_erase@PLT
+ 848      00
+ 849              	.LVL84:
+ 187:./test/kved_test.c **** 	kved_flash_sector_erase(KVED_FLASH_SECTOR_B);
+ 850              		.loc 1 187 2 view .LVU231
+ 851 008d BF010000 		movl	$1, %edi
+ 851      00
+ 852 0092 E8000000 		call	kved_flash_sector_erase@PLT
+ 852      00
+ 853              	.LVL85:
+ 188:./test/kved_test.c **** 	kved_flash_data_write(KVED_FLASH_SECTOR_A,0,KVED_SIGNATURE_ENTRY);
+ 854              		.loc 1 188 2 view .LVU232
+ 855 0097 4889DA   		movq	%rbx, %rdx
+ 856 009a BE000000 		movl	$0, %esi
+ 856      00
+ 857 009f BF000000 		movl	$0, %edi
+ 857      00
+ 858 00a4 E8000000 		call	kved_flash_data_write@PLT
+ 858      00
+ 859              	.LVL86:
+ 189:./test/kved_test.c **** 	kved_flash_data_write(KVED_FLASH_SECTOR_A,1,KVED_FLASH_UINT_MAX);
+ 860              		.loc 1 189 2 view .LVU233
+ 861 00a9 48C7C2FF 		movq	$-1, %rdx
+ 861      FFFFFF
+ 862 00b0 BE010000 		movl	$1, %esi
+ 862      00
+ 863 00b5 BF000000 		movl	$0, %edi
+ 863      00
+GAS LISTING /tmp/cchhzlxh.s 			page 27
+
+
+ 864 00ba E8000000 		call	kved_flash_data_write@PLT
+ 864      00
+ 865              	.LVL87:
+ 190:./test/kved_test.c ****     kved_flash_data_write(KVED_FLASH_SECTOR_B,0,KVED_SIGNATURE_ENTRY);
+ 866              		.loc 1 190 5 view .LVU234
+ 867 00bf 4889DA   		movq	%rbx, %rdx
+ 868 00c2 BE000000 		movl	$0, %esi
+ 868      00
+ 869 00c7 BF010000 		movl	$1, %edi
+ 869      00
+ 870 00cc E8000000 		call	kved_flash_data_write@PLT
+ 870      00
+ 871              	.LVL88:
+ 191:./test/kved_test.c **** 	kved_flash_data_write(KVED_FLASH_SECTOR_B,1,10);
+ 872              		.loc 1 191 2 view .LVU235
+ 873 00d1 BA0A0000 		movl	$10, %edx
+ 873      00
+ 874 00d6 BE010000 		movl	$1, %esi
+ 874      00
+ 875 00db BF010000 		movl	$1, %edi
+ 875      00
+ 876 00e0 E8000000 		call	kved_flash_data_write@PLT
+ 876      00
+ 877              	.LVL89:
+ 192:./test/kved_test.c **** 
+ 193:./test/kved_test.c **** 	kved_init();
+ 878              		.loc 1 193 2 view .LVU236
+ 879 00e5 E8000000 		call	kved_init@PLT
+ 879      00
+ 880              	.LVL90:
+ 194:./test/kved_test.c ****     kved_dump();
+ 881              		.loc 1 194 5 view .LVU237
+ 882 00ea E8000000 		call	kved_dump@PLT
+ 882      00
+ 883              	.LVL91:
+ 195:./test/kved_test.c **** 
+ 196:./test/kved_test.c ****     // test sector roll over
+ 197:./test/kved_test.c **** 	kved_flash_sector_erase(KVED_FLASH_SECTOR_A);
+ 884              		.loc 1 197 2 view .LVU238
+ 885 00ef BF000000 		movl	$0, %edi
+ 885      00
+ 886 00f4 E8000000 		call	kved_flash_sector_erase@PLT
+ 886      00
+ 887              	.LVL92:
+ 198:./test/kved_test.c **** 	kved_flash_data_write(KVED_FLASH_SECTOR_A,0,KVED_SIGNATURE_ENTRY);
+ 888              		.loc 1 198 2 view .LVU239
+ 889 00f9 4889DA   		movq	%rbx, %rdx
+ 890 00fc BE000000 		movl	$0, %esi
+ 890      00
+ 891 0101 BF000000 		movl	$0, %edi
+ 891      00
+ 892 0106 E8000000 		call	kved_flash_data_write@PLT
+ 892      00
+ 893              	.LVL93:
+ 199:./test/kved_test.c **** 	kved_flash_data_write(KVED_FLASH_SECTOR_A,1,KVED_FLASH_UINT_MAX-1);
+ 894              		.loc 1 199 2 view .LVU240
+ 895 010b 48C7C2FE 		movq	$-2, %rdx
+GAS LISTING /tmp/cchhzlxh.s 			page 28
+
+
+ 895      FFFFFF
+ 896 0112 BE010000 		movl	$1, %esi
+ 896      00
+ 897 0117 BF000000 		movl	$0, %edi
+ 897      00
+ 898 011c E8000000 		call	kved_flash_data_write@PLT
+ 898      00
+ 899              	.LVL94:
+ 200:./test/kved_test.c **** 	kved_flash_sector_erase(KVED_FLASH_SECTOR_B);
+ 900              		.loc 1 200 2 view .LVU241
+ 901 0121 BF010000 		movl	$1, %edi
+ 901      00
+ 902 0126 E8000000 		call	kved_flash_sector_erase@PLT
+ 902      00
+ 903              	.LVL95:
+ 201:./test/kved_test.c **** 	kved_flash_data_write(KVED_FLASH_SECTOR_B,0,KVED_SIGNATURE_ENTRY);
+ 904              		.loc 1 201 2 view .LVU242
+ 905 012b 4889DA   		movq	%rbx, %rdx
+ 906 012e BE000000 		movl	$0, %esi
+ 906      00
+ 907 0133 BF010000 		movl	$1, %edi
+ 907      00
+ 908 0138 E8000000 		call	kved_flash_data_write@PLT
+ 908      00
+ 909              	.LVL96:
+ 202:./test/kved_test.c **** 	kved_flash_data_write(KVED_FLASH_SECTOR_B,1,0);
+ 910              		.loc 1 202 2 view .LVU243
+ 911 013d BA000000 		movl	$0, %edx
+ 911      00
+ 912 0142 BE010000 		movl	$1, %esi
+ 912      00
+ 913 0147 BF010000 		movl	$1, %edi
+ 913      00
+ 914 014c E8000000 		call	kved_flash_data_write@PLT
+ 914      00
+ 915              	.LVL97:
+ 203:./test/kved_test.c **** 
+ 204:./test/kved_test.c **** 	kved_init();
+ 916              		.loc 1 204 2 view .LVU244
+ 917 0151 E8000000 		call	kved_init@PLT
+ 917      00
+ 918              	.LVL98:
+ 205:./test/kved_test.c ****     kved_dump();
+ 919              		.loc 1 205 5 view .LVU245
+ 920 0156 E8000000 		call	kved_dump@PLT
+ 920      00
+ 921              	.LVL99:
+ 206:./test/kved_test.c **** }
+ 922              		.loc 1 206 1 is_stmt 0 view .LVU246
+ 923 015b 5B       		popq	%rbx
+ 924              		.cfi_def_cfa_offset 8
+ 925 015c C3       		ret
+ 926              		.cfi_endproc
+ 927              	.LFE36:
+ 929              		.section	.text.kved_key_test,"ax",@progbits
+ 930              		.globl	kved_key_test
+ 932              	kved_key_test:
+GAS LISTING /tmp/cchhzlxh.s 			page 29
+
+
+ 933              	.LFB37:
+ 207:./test/kved_test.c **** 
+ 208:./test/kved_test.c **** void kved_key_test(void)
+ 209:./test/kved_test.c **** {      
+ 934              		.loc 1 209 1 is_stmt 1 view -0
+ 935              		.cfi_startproc
+ 936 0000 F30F1EFA 		endbr64
+ 937 0004 53       		pushq	%rbx
+ 938              		.cfi_def_cfa_offset 16
+ 939              		.cfi_offset 3, -16
+ 940 0005 4883EC60 		subq	$96, %rsp
+ 941              		.cfi_def_cfa_offset 112
+ 942              		.loc 1 209 1 is_stmt 0 view .LVU248
+ 943 0009 64488B04 		movq	%fs:40, %rax
+ 943      25280000 
+ 943      00
+ 944 0012 48894424 		movq	%rax, 88(%rsp)
+ 944      58
+ 945 0017 31C0     		xorl	%eax, %eax
+ 210:./test/kved_test.c **** 	kved_flash_sector_erase(KVED_FLASH_SECTOR_A);
+ 946              		.loc 1 210 2 is_stmt 1 view .LVU249
+ 947 0019 BF000000 		movl	$0, %edi
+ 947      00
+ 948 001e E8000000 		call	kved_flash_sector_erase@PLT
+ 948      00
+ 949              	.LVL100:
+ 211:./test/kved_test.c **** 	kved_flash_sector_erase(KVED_FLASH_SECTOR_B);
+ 950              		.loc 1 211 2 view .LVU250
+ 951 0023 BF010000 		movl	$1, %edi
+ 951      00
+ 952 0028 E8000000 		call	kved_flash_sector_erase@PLT
+ 952      00
+ 953              	.LVL101:
+ 212:./test/kved_test.c **** 	kved_flash_data_write(KVED_FLASH_SECTOR_A,0,KVED_SIGNATURE_ENTRY);
+ 954              		.loc 1 212 2 view .LVU251
+ 955 002d 48BAEFBE 		movabsq	$-2401053088876216593, %rdx
+ 955      ADDEEFBE 
+ 955      ADDE
+ 956 0037 BE000000 		movl	$0, %esi
+ 956      00
+ 957 003c BF000000 		movl	$0, %edi
+ 957      00
+ 958 0041 E8000000 		call	kved_flash_data_write@PLT
+ 958      00
+ 959              	.LVL102:
+ 213:./test/kved_test.c **** 	kved_flash_data_write(KVED_FLASH_SECTOR_A,1,0);
+ 960              		.loc 1 213 2 view .LVU252
+ 961 0046 BA000000 		movl	$0, %edx
+ 961      00
+ 962 004b BE010000 		movl	$1, %esi
+ 962      00
+ 963 0050 BF000000 		movl	$0, %edi
+ 963      00
+ 964 0055 E8000000 		call	kved_flash_data_write@PLT
+ 964      00
+ 965              	.LVL103:
+ 214:./test/kved_test.c **** 
+GAS LISTING /tmp/cchhzlxh.s 			page 30
+
+
+ 215:./test/kved_test.c **** 	kved_init();
+ 966              		.loc 1 215 2 view .LVU253
+ 967 005a E8000000 		call	kved_init@PLT
+ 967      00
+ 968              	.LVL104:
+ 216:./test/kved_test.c **** 
+ 217:./test/kved_test.c **** 	kved_data_t d1 = {
+ 969              		.loc 1 217 2 view .LVU254
+ 970              		.loc 1 217 14 is_stmt 0 view .LVU255
+ 971 005f 48C70424 		movq	$0, (%rsp)
+ 971      00000000 
+ 972 0067 48C74424 		movq	$0, 8(%rsp)
+ 972      08000000 
+ 972      00
+ 973 0070 48C74424 		movq	$0, 16(%rsp)
+ 973      10000000 
+ 973      00
+ 974 0079 C7042478 		movl	$305419896, (%rsp)
+ 974      563412
+ 975 0080 C7442408 		movl	$12643, 8(%rsp)
+ 975      63310000 
+ 976 0088 66C74424 		movw	$0, 12(%rsp)
+ 976      0C0000
+ 977 008f C644240E 		movb	$0, 14(%rsp)
+ 977      00
+ 978 0094 C7442410 		movl	$4, 16(%rsp)
+ 978      04000000 
+ 218:./test/kved_test.c **** 			.type = KVED_DATA_TYPE_UINT32,
+ 219:./test/kved_test.c **** 			.key = "c1",
+ 220:./test/kved_test.c **** 			.value.u32 = 0x12345678
+ 221:./test/kved_test.c **** 	};
+ 222:./test/kved_test.c **** 
+ 223:./test/kved_test.c **** 	kved_data_t d2 = {
+ 979              		.loc 1 223 2 is_stmt 1 view .LVU256
+ 980              		.loc 1 223 14 is_stmt 0 view .LVU257
+ 981 009c 48C74424 		movq	$0, 32(%rsp)
+ 981      20000000 
+ 981      00
+ 982 00a5 48C74424 		movq	$0, 40(%rsp)
+ 982      28000000 
+ 982      00
+ 983 00ae 48C74424 		movq	$0, 48(%rsp)
+ 983      30000000 
+ 983      00
+ 984 00b7 C6442420 		movb	$-86, 32(%rsp)
+ 984      AA
+ 985 00bc C7442428 		movl	$12899, 40(%rsp)
+ 985      63320000 
+ 986 00c4 66C74424 		movw	$0, 44(%rsp)
+ 986      2C0000
+ 987 00cb C644242E 		movb	$0, 46(%rsp)
+ 987      00
+ 224:./test/kved_test.c **** 			.type = KVED_DATA_TYPE_UINT8,
+ 225:./test/kved_test.c **** 			.key = "c2",
+ 226:./test/kved_test.c **** 			.value.u8 = 0xAA
+ 227:./test/kved_test.c **** 	};
+ 228:./test/kved_test.c **** 
+GAS LISTING /tmp/cchhzlxh.s 			page 31
+
+
+ 229:./test/kved_test.c **** 	kved_data_t d3 = {
+ 988              		.loc 1 229 2 is_stmt 1 view .LVU258
+ 989              		.loc 1 229 14 is_stmt 0 view .LVU259
+ 990 00d0 48C74424 		movq	$5390669, 64(%rsp)
+ 990      404D4152 
+ 990      00
+ 991 00d9 C7442448 		movl	$13155, 72(%rsp)
+ 991      63330000 
+ 992 00e1 66C74424 		movw	$0, 76(%rsp)
+ 992      4C0000
+ 993 00e8 C644244E 		movb	$0, 78(%rsp)
+ 993      00
+ 994 00ed C7442450 		movl	$7, 80(%rsp)
+ 994      07000000 
+ 230:./test/kved_test.c **** 			.type = KVED_DATA_TYPE_STRING,
+ 231:./test/kved_test.c **** 			.key = "c3",
+ 232:./test/kved_test.c **** 			.value.str ="MAR"
+ 233:./test/kved_test.c **** 	};
+ 234:./test/kved_test.c **** 
+ 235:./test/kved_test.c **** 	kved_data_write(&d1);
+ 995              		.loc 1 235 2 is_stmt 1 view .LVU260
+ 996 00f5 4889E7   		movq	%rsp, %rdi
+ 997 00f8 E8000000 		call	kved_data_write@PLT
+ 997      00
+ 998              	.LVL105:
+ 236:./test/kved_test.c **** 	kved_data_write(&d2);
+ 999              		.loc 1 236 2 view .LVU261
+ 1000 00fd 488D5C24 		leaq	32(%rsp), %rbx
+ 1000      20
+ 1001 0102 4889DF   		movq	%rbx, %rdi
+ 1002 0105 E8000000 		call	kved_data_write@PLT
+ 1002      00
+ 1003              	.LVL106:
+ 237:./test/kved_test.c **** 	kved_data_write(&d3);
+ 1004              		.loc 1 237 2 view .LVU262
+ 1005 010a 488D7C24 		leaq	64(%rsp), %rdi
+ 1005      40
+ 1006 010f E8000000 		call	kved_data_write@PLT
+ 1006      00
+ 1007              	.LVL107:
+ 238:./test/kved_test.c **** 
+ 239:./test/kved_test.c **** 	// duplicated keys
+ 240:./test/kved_test.c **** 	kved_flash_data_write(KVED_FLASH_SECTOR_A,8,kved_key_encode(&d2));
+ 1008              		.loc 1 240 2 view .LVU263
+ 1009 0114 4889DF   		movq	%rbx, %rdi
+ 1010 0117 E8000000 		call	kved_key_encode@PLT
+ 1010      00
+ 1011              	.LVL108:
+ 1012 011c 4889C2   		movq	%rax, %rdx
+ 1013 011f BE080000 		movl	$8, %esi
+ 1013      00
+ 1014 0124 BF000000 		movl	$0, %edi
+ 1014      00
+ 1015 0129 E8000000 		call	kved_flash_data_write@PLT
+ 1015      00
+ 1016              	.LVL109:
+ 241:./test/kved_test.c **** 	kved_flash_data_write(KVED_FLASH_SECTOR_A,9,0x12345);
+GAS LISTING /tmp/cchhzlxh.s 			page 32
+
+
+ 1017              		.loc 1 241 2 view .LVU264
+ 1018 012e BA452301 		movl	$74565, %edx
+ 1018      00
+ 1019 0133 BE090000 		movl	$9, %esi
+ 1019      00
+ 1020 0138 BF000000 		movl	$0, %edi
+ 1020      00
+ 1021 013d E8000000 		call	kved_flash_data_write@PLT
+ 1021      00
+ 1022              	.LVL110:
+ 242:./test/kved_test.c **** 	
+ 243:./test/kved_test.c ****     kved_dump();
+ 1023              		.loc 1 243 5 view .LVU265
+ 1024 0142 E8000000 		call	kved_dump@PLT
+ 1024      00
+ 1025              	.LVL111:
+ 244:./test/kved_test.c **** 	kved_init();
+ 1026              		.loc 1 244 2 view .LVU266
+ 1027 0147 E8000000 		call	kved_init@PLT
+ 1027      00
+ 1028              	.LVL112:
+ 245:./test/kved_test.c **** 
+ 246:./test/kved_test.c **** 	// invalid entry (key not written)
+ 247:./test/kved_test.c **** 	kved_flash_data_write(KVED_FLASH_SECTOR_A,11,0x12345);
+ 1029              		.loc 1 247 2 view .LVU267
+ 1030 014c BA452301 		movl	$74565, %edx
+ 1030      00
+ 1031 0151 BE0B0000 		movl	$11, %esi
+ 1031      00
+ 1032 0156 BF000000 		movl	$0, %edi
+ 1032      00
+ 1033 015b E8000000 		call	kved_flash_data_write@PLT
+ 1033      00
+ 1034              	.LVL113:
+ 248:./test/kved_test.c **** 
+ 249:./test/kved_test.c **** 	kved_dump();
+ 1035              		.loc 1 249 2 view .LVU268
+ 1036 0160 E8000000 		call	kved_dump@PLT
+ 1036      00
+ 1037              	.LVL114:
+ 250:./test/kved_test.c **** 	kved_init();
+ 1038              		.loc 1 250 2 view .LVU269
+ 1039 0165 E8000000 		call	kved_init@PLT
+ 1039      00
+ 1040              	.LVL115:
+ 251:./test/kved_test.c **** 
+ 252:./test/kved_test.c **** 	d2.type = KVED_DATA_TYPE_INT16;
+ 1041              		.loc 1 252 2 view .LVU270
+ 1042              		.loc 1 252 10 is_stmt 0 view .LVU271
+ 1043 016a C7442430 		movl	$3, 48(%rsp)
+ 1043      03000000 
+ 253:./test/kved_test.c **** 	d2.value.i16 = -1;
+ 1044              		.loc 1 253 2 is_stmt 1 view .LVU272
+ 1045              		.loc 1 253 15 is_stmt 0 view .LVU273
+ 1046 0172 66C74424 		movw	$-1, 32(%rsp)
+ 1046      20FFFF
+ 254:./test/kved_test.c **** 	kved_data_write(&d2);
+GAS LISTING /tmp/cchhzlxh.s 			page 33
+
+
+ 1047              		.loc 1 254 2 is_stmt 1 view .LVU274
+ 1048 0179 4889DF   		movq	%rbx, %rdi
+ 1049 017c E8000000 		call	kved_data_write@PLT
+ 1049      00
+ 1050              	.LVL116:
+ 255:./test/kved_test.c **** 
+ 256:./test/kved_test.c **** 	kved_init();
+ 1051              		.loc 1 256 2 view .LVU275
+ 1052 0181 E8000000 		call	kved_init@PLT
+ 1052      00
+ 1053              	.LVL117:
+ 257:./test/kved_test.c **** }
+ 1054              		.loc 1 257 1 is_stmt 0 view .LVU276
+ 1055 0186 488B4424 		movq	88(%rsp), %rax
+ 1055      58
+ 1056 018b 64482B04 		subq	%fs:40, %rax
+ 1056      25280000 
+ 1056      00
+ 1057 0194 7506     		jne	.L66
+ 1058 0196 4883C460 		addq	$96, %rsp
+ 1059              		.cfi_remember_state
+ 1060              		.cfi_def_cfa_offset 16
+ 1061 019a 5B       		popq	%rbx
+ 1062              		.cfi_def_cfa_offset 8
+ 1063 019b C3       		ret
+ 1064              	.L66:
+ 1065              		.cfi_restore_state
+ 1066 019c E8000000 		call	__stack_chk_fail@PLT
+ 1066      00
+ 1067              	.LVL118:
+ 1068              		.cfi_endproc
+ 1069              	.LFE37:
+ 1071              		.section	.rodata.__PRETTY_FUNCTION__.0,"a"
+ 1072              		.align 16
+ 1075              	__PRETTY_FUNCTION__.0:
+ 1076 0000 6B766564 		.string	"kved_value_test"
+ 1076      5F76616C 
+ 1076      75655F74 
+ 1076      65737400 
+ 1077              		.section	.rodata.cst4,"aM",@progbits,4
+ 1078              		.align 4
+ 1079              	.LC7:
+ 1080 0000 D80F4940 		.long	1078530008
+ 1081              		.section	.rodata.cst8,"aM",@progbits,8
+ 1082              		.align 8
+ 1083              	.LC15:
+ 1084 0000 7A008BFC 		.long	-57999238
+ 1085 0004 FA210940 		.long	1074340346
+ 1086              		.text
+ 1087              	.Letext0:
+ 1088              		.file 2 "/usr/include/x86_64-linux-gnu/bits/types.h"
+ 1089              		.file 3 "/usr/include/x86_64-linux-gnu/bits/stdint-intn.h"
+ 1090              		.file 4 "/usr/include/x86_64-linux-gnu/bits/stdint-uintn.h"
+ 1091              		.file 5 "/usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h"
+ 1092              		.file 6 "./kved.h"
+ 1093              		.file 7 "./kved_flash.h"
+ 1094              		.file 8 "/usr/include/assert.h"
+GAS LISTING /tmp/cchhzlxh.s 			page 34
+
+
+ 4007              		.section	.note.gnu.property,"a"
+ 4008              		.align 8
+ 4009 0000 04000000 		.long	1f - 0f
+ 4010 0004 10000000 		.long	4f - 1f
+ 4011 0008 05000000 		.long	5
+ 4012              	0:
+ 4013 000c 474E5500 		.string	"GNU"
+ 4014              	1:
+ 4015              		.align 8
+ 4016 0010 020000C0 		.long	0xc0000002
+ 4017 0014 04000000 		.long	3f - 2f
+ 4018              	2:
+ 4019 0018 03000000 		.long	0x3
+ 4020              	3:
+ 4021 001c 00000000 		.align 8
+ 4022              	4:
+GAS LISTING /tmp/cchhzlxh.s 			page 35
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 kved_test.c
+     /tmp/cchhzlxh.s:47     .text.kved_value_test:0000000000000000 kved_value_test
+     /tmp/cchhzlxh.s:1075   .rodata.__PRETTY_FUNCTION__.0:0000000000000000 __PRETTY_FUNCTION__.0
+     /tmp/cchhzlxh.s:793    .text.kved_header_test:0000000000000000 kved_header_test
+     /tmp/cchhzlxh.s:932    .text.kved_key_test:0000000000000000 kved_key_test
+     /tmp/cchhzlxh.s:1079   .rodata.cst4:0000000000000000 .LC7
+     /tmp/cchhzlxh.s:6      .rodata.kved_value_test.str1.1:0000000000000000 .LC0
+     /tmp/cchhzlxh.s:8      .rodata.kved_value_test.str1.1:0000000000000013 .LC1
+     /tmp/cchhzlxh.s:10     .rodata.kved_value_test.str1.1:0000000000000026 .LC2
+     /tmp/cchhzlxh.s:12     .rodata.kved_value_test.str1.1:0000000000000039 .LC3
+     /tmp/cchhzlxh.s:14     .rodata.kved_value_test.str1.1:000000000000004e .LC4
+     /tmp/cchhzlxh.s:16     .rodata.kved_value_test.str1.1:0000000000000063 .LC5
+     /tmp/cchhzlxh.s:18     .rodata.kved_value_test.str1.1:0000000000000078 .LC6
+     /tmp/cchhzlxh.s:20     .rodata.kved_value_test.str1.1:000000000000008d .LC8
+     /tmp/cchhzlxh.s:22     .rodata.kved_value_test.str1.1:00000000000000a2 .LC9
+     /tmp/cchhzlxh.s:24     .rodata.kved_value_test.str1.1:00000000000000bd .LC10
+     /tmp/cchhzlxh.s:26     .rodata.kved_value_test.str1.1:00000000000000d8 .LC11
+     /tmp/cchhzlxh.s:28     .rodata.kved_value_test.str1.1:00000000000000f3 .LC12
+     /tmp/cchhzlxh.s:1083   .rodata.cst8:0000000000000000 .LC15
+     /tmp/cchhzlxh.s:30     .rodata.kved_value_test.str1.1:000000000000010e .LC13
+     /tmp/cchhzlxh.s:32     .rodata.kved_value_test.str1.1:0000000000000123 .LC14
+     /tmp/cchhzlxh.s:34     .rodata.kved_value_test.str1.1:0000000000000138 .LC16
+     /tmp/cchhzlxh.s:36     .rodata.kved_value_test.str1.1:000000000000014d .LC17
+     /tmp/cchhzlxh.s:38     .rodata.kved_value_test.str1.1:0000000000000168 .LC18
+     /tmp/cchhzlxh.s:40     .rodata.kved_value_test.str1.1:0000000000000183 .LC19
+     /tmp/cchhzlxh.s:42     .rodata.kved_value_test.str1.1:000000000000019e .LC20
+
+UNDEFINED SYMBOLS
+kved_data_write
+kved_data_read
+kved_flash_sector_size
+__assert_fail
+__stack_chk_fail
+kved_init
+kved_dump
+kved_flash_sector_erase
+kved_flash_data_write
+kved_key_encode
